@@ -58,3 +58,6 @@ docs/source/locale/**/*.mo
 
 # Secrets
 .env
+
+/frontend/dist/
+/node_modules/

@@ -101,7 +101,7 @@ def create_app(config: dict | None = None) -> Flask:
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["Referrer-Policy"] = "no-referrer"
         response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
-        if request.path.startswith("/api/") or request.path.startswith("/candidate/") or request.path in ("/", "/login"):
+        if request.path.startswith("/api/") or request.path.startswith("/candidate/") or request.path in ("/", "/app", "/login"):
             response.headers["Cache-Control"] = "no-store, private"
         if not app.config["DEMO"] and request.is_secure:
             response.headers["Strict-Transport-Security"] = "max-age=31536000"
@@ -122,7 +122,13 @@ def create_app(config: dict | None = None) -> Flask:
             return jsonify(error="The request could not be completed. Try again later."), 500
         return "The request could not be completed. Try again later.", 500
 
+    @app.get("/healthz")
+    def healthz():
+        get_db().execute("SELECT 1").fetchone()
+        return jsonify(status="ok")
+
     @app.get("/")
+    @app.get("/app")
     def workspace():
         if not g.user and app.config["DEMO"]:
             user_id = get_db().execute(
