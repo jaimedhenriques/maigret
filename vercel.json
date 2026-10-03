@@ -1,0 +1,50 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/dist",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/app",
+      "destination": "https://vetra-api-production-0262.up.railway.app/app"
+    },
+    {
+      "source": "/login",
+      "destination": "https://vetra-api-production-0262.up.railway.app/login"
+    },
+    {
+      "source": "/logout",
+      "destination": "https://vetra-api-production-0262.up.railway.app/logout"
+    },
+    {
+      "source": "/candidate/:path*",
+      "destination": "https://vetra-api-production-0262.up.railway.app/candidate/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://vetra-api-production-0262.up.railway.app/api/:path*"
+    },
+    {
+      "source": "/verification/:path*",
+      "destination": "https://vetra-api-production-0262.up.railway.app/verification/:path*"
+    },
+    {
+      "source": "/healthz",
+      "destination": "https://vetra-api-production-0262.up.railway.app/healthz"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/static/:path*",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ]
+}

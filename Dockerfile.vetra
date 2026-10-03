@@ -1,0 +1,15 @@
+FROM python:3.12-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 VETRA_DEMO=false VETRA_DATABASE=/data/vetra.sqlite3
+WORKDIR /app
+COPY requirements-vetra.txt .
+RUN pip install --no-cache-dir -r requirements-vetra.txt 'gunicorn>=23,<24' && \
+    apt-get update && apt-get install -y --no-install-recommends gosu && rm -rf /var/lib/apt/lists/* && \
+    groupadd --gid 10001 vetra && useradd --uid 10001 --gid vetra --no-create-home vetra && \
+    mkdir /data && chown vetra:vetra /data
+COPY vetra ./vetra
+COPY deploy/entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 8000
+# One worker for the SQLite pilot. Upgrade to managed Postgres before horizontal scaling.
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "1", "--threads", "4", "--timeout", "30", "vetra:create_app()"]

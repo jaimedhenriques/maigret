@@ -1,428 +1,81 @@
-# Maigret
+# Vetra
 
-<div align="center">
-  <div>
-    <a href="https://pypi.org/project/maigret/">
-        <img alt="PyPI version badge for Maigret" src="https://img.shields.io/pypi/v/maigret?style=flat-square" />
-    </a>
-    <a href="https://pepy.tech/project/maigret">
-      <img alt="Total downloads" src="https://static.pepy.tech/badge/maigret" />
-      <img alt="Downloads/month" src="https://static.pepy.tech/badge/maigret/month" />
-    </a>
-  </div>
-  <div>
-    <a href="https://github.com/soxoj/maigret">
-        <img alt="View count for Maigret project" src="https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square" />
-    </a>
-    <a href="https://github.com/soxoj/maigret">
-        <img alt="Minimum Python version required: 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square" />
-    </a>
-    <a href="https://github.com/soxoj/maigret/blob/main/LICENSE">
-        <img alt="License badge for Maigret" src="https://img.shields.io/github/license/soxoj/maigret?style=flat-square" />
-    </a>
-    <a href="https://maigret.readthedocs.io/">
-        <img alt="Maigret documentation" src="https://img.shields.io/readthedocs/maigret?style=flat-square&label=docs" />
-    </a>
-  </div>
-  <br>
-  <div>
-    <img src="https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png" height="300" alt="Maigret logo"/>
-  </div>
-  <br>
-  <div>
-    <a href="https://codewiki.google/github.com/soxoj/maigret">
-        <img alt="Ask Code Wiki about Maigret" src="https://img.shields.io/badge/Code_Wiki-ask_about_repo-yellow?logo=googlegemini" />
-    </a>
-    <a href="https://deepwiki.com/soxoj/maigret">
-        <img alt="Ask DeepWiki about Maigret" src="https://img.shields.io/badge/DeepWiki-ask_about_repo-yellow" />
-    </a>
-  </div>
-  <br>
-  <div>
-    <b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.fr.md">Français</a>
-  </div>
-  <br>
-  <div>
-    📖 <a href="https://maigret.readthedocs.io/"><b>Documentation</b></a>
-  </div>
-  <br>
-</div>
+**Candidate-controlled verification for hiring teams.**
 
-**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. 
+Vetra gives HR teams a clear workflow for candidate approval, scoped information collection, identity-provider checks, evidence review, corrections, and audit history. This is a paid-pilot foundation. The working brand needs domain and trademark clearance before commercial launch.
 
-## Sponsors
+![Vetra HR workspace with explicitly fictional demonstration candidates](docs/images/vetra-workspace.png)
 
-<p align="center">
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github">
-    <img width="600" alt="Noimosiny" src="https://github.com/user-attachments/assets/cef16613-4337-47a3-9105-2621197b17d1" />
-  </a>
-</p>
+## Try the workspace
 
-<p>
-  <a href="https://noimosiny.com/?utm_campaign=maigret&utm_source=github"><b>Noimosiny</b></a> is a comprehensive OSINT platform for professional investigators and analysts. Reverse email, phone number, and username search across 250+ modules. Automate your intelligence gathering with our powerful tools.
-</p>
-
-<br>
-
-<p align="center">
-  <a href="https://www.rapidproxy.io/?ref=soxoj">
-    <img src="https://github.com/user-attachments/assets/4ed589d1-37cb-4a40-9273-bff4d6f1a514" width="500" alt="RapidProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.rapidproxy.io/?ref=soxoj"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs • Smart rotation • Anti-block • Non-expiring traffic. <br>
-<b>Special Offer</b>: Try it free — Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.
-</p>
-
-<p align="center">
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github">
-    <img src="https://github.com/user-attachments/assets/146b6b95-06ae-4fda-bff2-d94946cf7c2e" width="300" alt="MangoProxy">
-  </a>
-</p>
-
-<p>
-  <a href="https://mangoproxy.com/?utm_source=soxoj&utm_medium=partner&utm_campaign=soxoj_github"><b>MangoProxy</b></a> is a Residential, ISP, Mobile and Datacenter proxy service designed for professional tasks where stability, speed, and anonymity matter. <br>
-<b>Promo code</b>: SOXOJ - 8% off Static ISP proxies
-</p>
-
-<p align="center">
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt">
-    <img src="https://github.com/user-attachments/assets/6d92bda0-c953-49b5-ab7e-73b0e67f17e2" width="350" alt="Thordata">
-  </a>
-</p>
-
-<p>
-  <a href="https://www.thordata.com/?ls=dmt&lk=dmt"><b>Thordata</b></a>
-</a> provides reliable residential proxies for OSINT research, username lookup, and public data collection workflows.
-Access <b>100M+ real residential IPs</b> across <b>195+ countries</b>  <b>unlimited concurrent connections</b>with 99.99% uptime and stable connections, Rotating + Sticky Sessions, and high success rates.
-<br>
-<b>Special Offer:</b> Free 3-day trial + <b>10% OFF</b> with code <b>SOXOJ10</b>.
-
-</p>
-
-## Contents
-
-- [In one minute](#in-one-minute)
-- [Main features](#main-features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Commercial Use](#commercial-use)
-- [About](#about)
-
-<a id="one-minute"></a>
-## In one minute
-
-Ensure you have Python 3.10 or higher.
+Python 3.10+:
 
 ```bash
-pip install maigret
-maigret YOUR_USERNAME
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-vetra.txt
+python -m vetra --port 8000
 ```
 
-No install? Try the [community Telegram bot](https://maigret.app/readme-en) or a [Cloud Shell](#cloud-shells). 
+Open **http://127.0.0.1:8000** for the HR workspace and **http://127.0.0.1:8000/about** for the product and pilot pricing page. Default demo mode uses clearly labeled fictional candidates, automatically signs in a local demo owner, and must bind to loopback. Use only sample information.
 
-Want a web UI? See [how to launch it](#web-interface).
+1. Create an invitation in the HR workspace.
+2. Open its private candidate link in a separate browser session.
+3. Approve the scope and submit a candidate statement.
+4. Record a manual evidence review in the HR case.
+5. Request and resolve a correction, or withdraw from the candidate portal.
 
-See also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). 
+Invitations are delivered by manually sharing the link; the app does not send email. New cases persist under `instance/`, which is excluded from Git.
 
-## Main features
+## Implemented
 
-- Supports 5,900 sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.
-- Embeddable in Python projects — import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).
-- [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.
-- Performs recursive search using discovered usernames and other IDs.
-- Allows filtering by tags (site categories, countries).
-- Detects and partially bypasses blocks, censorship, and CAPTCHA.
-- Fetches an [auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub each run (once per 24 hours), and falls back to the built-in database if offline.
-- Works with Tor and I2P websites; able to check domains.
-- Ships with a [web interface](#web-interface) for browsing results as a graph and downloading reports in every format from a single page.
-- Optional [AI analysis mode](#ai-analysis) (`--ai`) that turns raw findings into a short investigation summary using an OpenAI-compatible API.
+| Capability | Current behavior |
+|---|---|
+| HR workspace | Responsive queue, search, filters, case detail, activity, audit and minimal CSV exports |
+| Candidate portal | Expiring links, scoped approval, employment/education statements, selected professional profiles, correction and withdrawal |
+| Staff access | Password hashing, login throttling, owner/reviewer/viewer roles and server-enforced tenant boundaries |
+| Identity verification | Stripe Identity adapter, hosted sessions, idempotency, signed callbacks and recorded provider outcomes; activation required |
+| Evidence review | Named source and notes, explicitly labeled **Manually reviewed** |
+| Withdrawal | Revoke invitations, remove candidate details, stop checks and request provider cleanup |
+| Security foundation | CSRF protection, security headers, scoped queries, hashed tokens and safe CSV cells |
+| Partner notifications | Reused MIT Standard Webhooks verifier, tenant-bound deliveries, replay deduplication and notification-only audit |
 
-For the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).
+**Review complete** describes completion of the workflow. It is not a hiring recommendation. Statements and manual reviews never become provider-verified identity by changing a label.
 
-### Used by
+## Connect real verification
 
-Professional OSINT and social-media analysis tools built on Maigret:
+See [Provider integrations](docs/business/PROVIDER-INTEGRATIONS.md) for configuration and callback validation. Stripe API/webhook secrets, account activation and an HTTPS public URL are required. Fictional seeded candidates cannot be sent to a real provider.
 
-<a href="https://github.com/SocialLinks-IO/sociallinks-api"><img height="60" alt="Social Links API" src="https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660"></a>
-<a href="https://sociallinks.io/products/sl-crimewall"><img height="60" alt="Social Links Crimewall" src="https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1"></a>
-<a href="https://usersearch.ai/"><img height="60" alt="UserSearch" src="https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580"></a>
+Employment, education, criminal records, sanctions, credit and right-to-work checks require contracted data sources and jurisdiction-specific procedures. These background-check providers are **not connected**. Identity verification alone is not a complete AML/KYC program or employment background report.
 
-## Demo
+## Pilot deployment
 
-### Video
+Configure the variables in [.env.vetra.example](.env.vetra.example), use a separate database, and set `VETRA_DEMO=false`. The factory refuses missing stable secrets, missing admin credentials, or a database containing demonstration candidates. The example file documents environment variables; the app does not read dotenv files.
 
-<a href="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ">
-  <img src="https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg" alt="asciicast" width="600">
-</a>
+[Dockerfile.vetra](Dockerfile.vetra) provides a non-root Gunicorn runtime with demo disabled. Supply secrets through the deployment platform, terminate HTTPS at a reverse proxy, and mount a writable database volume. Never expose the automatic-login demo publicly. SQLite is a single-instance pilot, not a horizontally scalable enterprise service.
 
-### Reports
+See [Enterprise architecture](docs/business/ENTERPRISE-ARCHITECTURE.md) for Postgres, queues, SSO, provider contracts, retention, monitoring and validation needed before enterprise launch. No SOC 2, ISO 27001, GDPR or FCRA certification is claimed.
 
-[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)
+## Build the business
 
-![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)
+- [Launch plan](docs/business/LAUNCH-PLAN.md): buyer, offer, pilot economics and launch milestones.
+- [Sales kit](docs/business/SALES-KIT.md): discovery questions, demo script, pilot proposal and outreach drafts.
+- [Open-source component review](docs/business/OSS-COMPONENTS.md): inspected repositories, licenses, components and limitations.
+- [Provider integrations](docs/business/PROVIDER-INTEGRATIONS.md): actual behavior and activation requirements.
 
-![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)
-
-[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)
-
-## Installation
-
-Already ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.
-
-Don't want to install anything? Use the [community Telegram bot](https://maigret.app/readme-en).
-
-### Windows
-
-Download `maigret_standalone.exe` from [Releases](https://github.com/soxoj/maigret/releases). You can launch it two ways:
-
-- **Double-click it** — Maigret will ask for a username, run a default search, and wait at the end so the report links stay visible.
-- **Run it from a terminal** — open Command Prompt (press `Win+R`, type `cmd`, hit Enter) or PowerShell to pass extra options:
-
-```cmd
-cd %USERPROFILE%\Downloads
-maigret_standalone.exe USERNAME
-maigret_standalone.exe USERNAME --html       :: also save an HTML report
-maigret_standalone.exe --help                :: list all options
-```
-
-Video guide: https://youtu.be/qIgwTZOmMmM.
-
-<a id="cloud-shells"></a>
-### Cloud Shells
-
-Run Maigret in the browser via cloud shells or Jupyter notebooks:
-
-<a href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=cloudshell-tutorial.md"><img src="https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png" alt="Open in Cloud Shell" height="50"></a>
-<a href="https://repl.it/github/soxoj/maigret"><img src="https://replit.com/badge/github/soxoj/maigret" alt="Run on Replit" height="50"></a>
-
-<a href="https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="45"></a>
-<a href="https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD"><img src="https://mybinder.org/badge_logo.svg" alt="Open In Binder" height="45"></a>
-
-### Snap (Linux)
-
-<a href="https://snapcraft.io/maigret"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" height="50"></a>
+## Tests
 
 ```bash
-sudo snap install maigret
-
-# usage
-maigret username
+pip install pytest
+python -m pytest --noconftest tests/test_vetra*.py -q
 ```
 
-Available for amd64 and arm64, no Python required. The snap is strictly confined and can write inside your home directory, so run it from there. For USB drives, connect the interface once with `sudo snap connect maigret:removable-media`.
+`--noconftest` keeps the standalone suite independent of Maigret's larger dependency stack. Tests cover tenancy, roles, approval, candidate-link scope, withdrawal, export and provider state handling. GitHub CI runs these checks on Vetra changes.
 
-### Local installation (pip)
+## Attribution
 
-```bash
-# install from pypi
-pip3 install maigret
+This repository began as a fork of [Maigret](https://github.com/soxoj/maigret), the MIT licensed OSINT engine. Its copyright and [LICENSE](LICENSE) are retained. The original README is in [docs/upstream/MAIGRET-README.md](docs/upstream/MAIGRET-README.md). The `maigret` Python package and CLI remain compatible; the new `vetra` app runs separately and does not expose username discovery or AI profiling to HR users.
 
-# usage
-maigret username
-```
+Public account matches do not establish identity, ownership, criminal history, employment eligibility or suitability. They are not verification evidence in Vetra.
 
-### From source
-
-```bash
-# or clone and install manually
-git clone https://github.com/soxoj/maigret && cd maigret
-
-# build and install
-pip3 install .
-
-# usage
-maigret username
-```
-
-### Docker
-
-Two image variants are published:
-
-- `soxoj/maigret:latest` — CLI mode (default)
-- `soxoj/maigret:web` — auto-launches the [web interface](#web-interface)
-
-```bash
-# official image (CLI)
-docker pull soxoj/maigret
-
-# CLI usage
-docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
-
-# Web UI (open http://localhost:5000)
-docker run -p 5000:5000 soxoj/maigret:web
-
-# Web UI on a custom port
-docker run -e PORT=8080 -p 8080:8080 soxoj/maigret:web
-
-# manual build
-docker build -t maigret .                  # CLI image (default target)
-docker build --target web -t maigret-web . # Web UI image
-```
-
-### Troubleshooting
-
-Build errors? See the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).
-
-PDF reports (`--pdf`) are an optional extra — install with `pip install 'maigret[pdf]'`. They need system-level graphics libraries on Linux/macOS; see the [PDF reports section](https://maigret.readthedocs.io/en/latest/installation.html#optional-pdf-reports-maigret-pdf) for per-OS install steps.
-
-## Usage
-
-### Examples
-
-```bash
-# make HTML, PDF, and XMind reports
-maigret user --html
-maigret user --pdf
-maigret user --xmind # legacy XML with a manifest for XMind 2022+ readers
-
-# machine-readable exports
-maigret user --json ndjson   # newline-delimited JSON (also: --json simple)
-maigret user --csv
-maigret user --txt
-maigret user --graph         # interactive D3 graph (HTML)
-maigret user --neo4j         # Neo4j Cypher script (graph database)
-
-# search on sites marked with tags photo & dating
-maigret user --tags photo,dating
-
-# search on sites marked with tag us
-maigret user --tags us
-
-# highlight sites whose page also mentions specific keywords
-maigret user --keywords python rust
-# keyword-matched sites are shown with "[++]" in bright green
-
-# search for three usernames on all available sites
-maigret user1 user2 user3 -a
-
-# AI-assisted investigation summary (needs OPENAI_API_KEY)
-maigret user --ai
-```
-
-`--neo4j` writes a `*_neo4j.cypher` script of the results graph; import it with `cypher-shell -u neo4j -p <password> < report_user_neo4j.cypher` or paste it into the Neo4j Browser. Re-imports are idempotent. See the [Neo4j export docs](https://maigret.readthedocs.io/en/latest/command-line-options.html#neo4j-export).
-
-Run `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html). Running into 403s or timeouts? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
-
-<a id="web-interface"></a>
-### Web interface
-
-Maigret has a built-in web UI with a results graph and downloadable reports.
-
-Don't want to run it yourself? Deploy the published `soxoj/maigret:web` Docker image as a hosted app in one click:
-
-<a href="https://render.com/deploy?repo=https://github.com/soxoj/maigret&path=utils/render.yaml"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="40"></a>
-
-Runs on Render's free tier (spins down after 15 min idle, spins back up on the next request). No login is set up on the instance, so anyone with the URL can use it.
-
-<details>
-<summary>Web Interface Screenshots</summary>
-
-![Web interface: how to start](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot_start.png)
-
-![Web interface: results](https://raw.githubusercontent.com/soxoj/maigret/main/static/web_interface_screenshot.png)
-
-</details>
-
-```console
-maigret --web 5000
-```
-
-Open http://127.0.0.1:5000, enter a username, and view results.
-
-### Python library
-
-**Maigret can be embedded in your own Python projects.** The CLI is a thin wrapper around an async function you can call directly — build custom pipelines, feed results into your own tooling, or run it inside a larger OSINT workflow.
-
-See the full [library usage guide](https://maigret.readthedocs.io/en/latest/library-usage.html) for a working example, async patterns, and how to filter sites by tag.
-
-### Useful CLI flags
-
-- `--parse URL` — parse a profile page, extract IDs/usernames, and use them to kick off a recursive search.
-- `--permute` — generate likely username variants from two or more inputs (e.g. `john doe` → `johndoe`, `j.doe`, …) and search for all of them.
-- `--self-check [--auto-disable]` — verify `usernameClaimed` / `usernameUnclaimed` pairs against live sites for maintainers auditing the database.
-- `--ai` / `--ai-model` — run the [AI analysis](#ai-analysis) over the search results and stream a short investigation summary to the terminal.
-
-<a id="ai-analysis"></a>
-### AI analysis
-
-[![asciicast](https://asciinema.org/a/979404.svg)](https://asciinema.org/a/979404)
-
-`--ai` collects the search results, builds an internal Markdown report, and sends it to an OpenAI-compatible chat completion endpoint to produce a short, neutral investigation summary (likely real name, location, occupation, interests, languages, confidence, follow-up leads). Per-site progress is suppressed and the model's output is streamed to stdout.
-
-```bash
-export OPENAI_API_KEY=sk-...
-maigret user --ai
-
-# pick a different model
-maigret user --ai --ai-model gpt-4o-mini
-```
-
-The key can also be set as `openai_api_key` in `settings.json`. The endpoint defaults to `https://api.openai.com/v1`, but `openai_api_base_url` in `settings.json` can point to any OpenAI-compatible API (Azure OpenAI, OpenRouter, a local server, …). See the [settings docs](https://maigret.readthedocs.io/en/latest/settings.html) for the full list of options.
-
-### Tor / I2P / proxies
-
-Maigret can route checks through a proxy, Tor, or I2P — useful for `.onion` / `.i2p` sites and for bypassing WAFs that block datacenter IPs.
-
-```bash
-# any HTTP/SOCKS proxy
-maigret user --proxy socks5://127.0.0.1:1080
-
-# Tor (default gateway socks5://127.0.0.1:9050)
-maigret user --tor-proxy socks5://127.0.0.1:9050
-
-# I2P (default gateway http://127.0.0.1:4444)
-maigret user --i2p-proxy http://127.0.0.1:4444
-```
-
-Start your Tor / I2P daemon before running the command — Maigret does not manage these gateways.
-
-### Cloudflare bypass
-
-> **Experimental.** The Cloudflare webgate is under active development; the configuration schema, CLI behaviour, and the set of routed sites may change without backwards-compatibility guarantees.
-
-A subset of sites in the database require a real browser to solve a JavaScript challenge. Maigret can offload these checks to a local [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) instance:
-
-```bash
-docker run -d -p 8191:8191 --name flaresolverr ghcr.io/flaresolverr/flaresolverr:latest
-maigret --cloudflare-bypass <username>
-```
-
-The bypass is opt-in (`--cloudflare-bypass` or `cloudflare_bypass.enabled` in `settings.json`) and only fires for sites whose `protection` field matches. See the [feature docs](https://maigret.readthedocs.io/en/latest/features.html#cloudflare-bypass) for backend options and configuration.
-
-## Contributing
-
-Add or fix new sites surgically in `data.json` (no `json.load`/`json.dump`), then run `./utils/update_site_data.py` to regenerate `sites.md` and the database metadata, and open a pull request. For more details, see the [CONTRIBUTING guide](https://github.com/soxoj/maigret/blob/main/CONTRIBUTING.md) and [development docs](https://maigret.readthedocs.io/en/latest/development.html). Release history: [CHANGELOG.md](CHANGELOG.md).
-
-## Commercial Use
-
-The open-source Maigret is MIT-licensed and free for commercial use without restriction — but site checks break over time and need active maintenance.
-
-For serious commercial use — with a **daily-updated site database** or a **username-check API** — reach out: 📧 [maigret@soxoj.com](mailto:maigret@soxoj.com)
-
-- Private site database — 5 000+ sites, updated daily (separate from the public open-source database)
-- Username check API — integrate Maigret into your product
-
-## About
-
-### Disclaimer
-
-**For educational and lawful purposes only.** You are responsible for complying with all applicable laws (GDPR, CCPA, etc.) in your jurisdiction. The authors bear no responsibility for misuse.
-
-### Feedback
-
-[Open an issue](https://github.com/soxoj/maigret/issues) · [GitHub Discussions](https://github.com/soxoj/maigret/discussions) · [Telegram](https://t.me/soxoj)
-
-### SOWEL classification
-
-OSINT techniques used:
-- [SOTL-2.2. Search For Accounts On Other Platforms](https://sowel.soxoj.com/other-platform-accounts)
-- [SOTL-6.1. Check Logins Reuse To Find Another Account](https://sowel.soxoj.com/logins-reuse)
-- [SOTL-6.2. Check Nicknames Reuse To Find Another Account](https://sowel.soxoj.com/nicknames-reuse) 
-
-### License
-
-MIT © [Maigret](https://github.com/soxoj/maigret)
+Manrope is self-hosted under its [SIL Open Font License](vetra/static/fonts/OFL.txt). Reused modules retain their licenses and exact source provenance; see the component review.

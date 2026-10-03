@@ -1,0 +1,1 @@
+{"name":"vetra-frontend","private":true,"scripts":{"build":"node frontend/build.mjs"}}

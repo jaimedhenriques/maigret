@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/standard-webhooks/standard-webhooks",
+  "commit": "7537d2a2d3d52d8f2e0ecd12527af4a9307fd81b",
+  "upstream_directory": "libraries/python",
+  "license": "MIT",
+  "upstream_version": "1.1.0",
+  "copied_unmodified": [
+    "webhooks.py",
+    "__init__.py",
+    "exceptions.py",
+    "py.typed",
+    "LICENSE"
+  ],
+  "sha256": {
+    "webhooks.py": "09cdb57c841b8ab2836508f00084260267791933885e06c9079b7c977e7af3ee",
+    "__init__.py": "708e518301521cd7474fbc77c3816290445fec2dbe8e443895bb3d37302889c8",
+    "exceptions.py": "43c526283a66b8ebff0bf796150c904ad8cd2b8639babb72655aab15beebaf34",
+    "py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "LICENSE": "7fc0e108ffa3c85ff70f06077588445b16a564da88aa4f4905dc3b3636a75536"
+  }
+}
