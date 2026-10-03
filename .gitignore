@@ -23,6 +23,11 @@ src/
 # Output files, except requirements.txt
 *.txt
 !requirements.txt
+!requirements-vetra.txt
+!vetra/static/fonts/OFL.txt
+instance/
+.pytest_cache/
+.impeccable/review/
 
 # Comma-Separated Values (CSV) Reports
 *.csv

@@ -4,5 +4,10 @@ static/
 tests/
 *.txt
 !/requirements.txt
+!/requirements-vetra.txt
+!vetra/static/fonts/OFL.txt
 venv/
-
+.venv/
+instance/
+.env
+.impeccable/

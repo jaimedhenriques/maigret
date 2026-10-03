@@ -5,7 +5,8 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "maigret"
 version = "0.6.6"
-description = "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites."
+description = "Vetra candidate verification pilot with the attributed Maigret research engine."
+packages = [{include = "maigret"}, {include = "vetra"}]
 authors = ["Soxoj <soxoj@protonmail.com>"]
 readme = "README.md"
 license = "MIT License"
@@ -99,3 +100,4 @@ black = ">=25.1,<27.0"
 [tool.poetry.scripts]
 # Run with: poetry run maigret <username>
 maigret = "maigret.maigret:run"
+vetra = "vetra.__main__:main"
