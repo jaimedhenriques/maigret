@@ -63,6 +63,8 @@ def create_app(config: dict | None = None) -> Flask:
         app.config["SESSION_COOKIE_SECURE"] = (config or {}).get("SESSION_COOKIE_SECURE", True)
     app.teardown_appcontext(close_db)
     init_db(app)
+    from .pilot import init_pilot
+    init_pilot(app)
 
     @app.before_request
     def protect_request():
@@ -75,13 +77,13 @@ def create_app(config: dict | None = None) -> Flask:
                 "SELECT u.*,t.name AS organization FROM users u JOIN tenants t ON t.id=u.tenant_id "
                 "WHERE u.id=?", (session["user_id"],)
             ).fetchone()
-            if row:
+            if row and session.get("auth_version", 0) == row["auth_version"]:
                 g.user = dict(row)
             else:
                 session.clear()
                 session["csrf"] = secrets.token_urlsafe(32)
         if request.method in ("POST", "PUT", "PATCH", "DELETE") and request.endpoint not in (
-            "stripe_webhook", "workflow_ingress.receive_workflow_event"
+            "stripe_webhook", "workflow_ingress.receive_workflow_event", "pilot.billing_webhook"
         ):
             token = request.headers.get("X-CSRF-Token", request.form.get("csrf_token", ""))
             expected = session.get("csrf", "")
@@ -101,7 +103,7 @@ def create_app(config: dict | None = None) -> Flask:
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["Referrer-Policy"] = "no-referrer"
         response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
-        if request.path.startswith("/api/") or request.path.startswith("/candidate/") or request.path in ("/", "/app", "/login"):
+        if request.path.startswith("/api/") or request.path.startswith("/candidate/") or request.path in ("/", "/app", "/login", "/pilot", "/forgot-password") or request.path.startswith("/reset-password/"):
             response.headers["Cache-Control"] = "no-store, private"
         if not app.config["DEMO"] and request.is_secure:
             response.headers["Strict-Transport-Security"] = "max-age=31536000"
@@ -189,6 +191,7 @@ def create_app(config: dict | None = None) -> Flask:
         session.clear()
         session["csrf"] = secrets.token_urlsafe(32)
         session["user_id"] = row["id"]
+        session["auth_version"] = row["auth_version"]
         session.permanent = True
         with db:
             db.execute("DELETE FROM login_attempts WHERE subject_hash=?", (subject_hash,))
@@ -280,8 +283,11 @@ def create_app(config: dict | None = None) -> Flask:
             token = _create_invitation(g.user["tenant_id"], candidate_id)
             audit(g.user["tenant_id"], "candidate.invited", "Candidate invitation created; delivery is manual",
                   candidate_id, g.user["id"])
-        return jsonify(candidate=_candidate_json(_get_candidate(candidate_id)),
-                       invitation_url=url_for("candidate_portal", token=token), delivery="manual"), 201
+        from .pilot import deliver_invitation
+        path = url_for("candidate_portal", token=token)
+        candidate = _get_candidate(candidate_id)
+        return jsonify(candidate=_candidate_json(candidate), invitation_url=path,
+                       delivery=deliver_invitation(candidate, path)), 201
 
     @app.post("/api/candidates/<candidate_id>/invite")
     @require_staff("owner", "reviewer")
@@ -294,7 +300,9 @@ def create_app(config: dict | None = None) -> Flask:
             token = _create_invitation(g.user["tenant_id"], candidate_id)
             audit(g.user["tenant_id"], "invitation.reissued", "Fresh invitation created; previous invitation revoked",
                   candidate_id, g.user["id"])
-        return jsonify(invitation_url=url_for("candidate_portal", token=token), delivery="manual")
+        from .pilot import deliver_invitation
+        path = url_for("candidate_portal", token=token)
+        return jsonify(invitation_url=path, delivery=deliver_invitation(candidate, path))
 
     @app.post("/api/candidates/<candidate_id>/checks/<check_id>/review")
     @require_staff("owner", "reviewer")
@@ -523,19 +531,20 @@ def create_app(config: dict | None = None) -> Flask:
     @app.get("/api/settings")
     @require_staff()
     def settings():
+        from .pilot import email_ready, billing_ready
         provider = _provider()
         identity_configured = bool(provider and provider.is_configured and getattr(provider, "is_live", False)
                                    and _valid_public_url(app.config["PUBLIC_URL"]))
         return jsonify(
-            organization=g.user["organization"], demo=app.config["DEMO"], mode="local_pilot",
+            organization=g.user["organization"], demo=app.config["DEMO"], mode="hosted_pilot",
             capabilities={"consent": True, "manual_review": True, "audit_trail": True,
                           "tenant_isolation": True, "role_permissions": True, "candidate_corrections": True,
                           "identity_provider": identity_configured, "employment_provider": False,
                           "education_provider": False, "sanctions": False, "criminal_records": False,
-                          "billing": False, "sso": False, "email_delivery": False},
+                          "billing": billing_ready(), "sso": False, "email_delivery": email_ready()},
             readiness={"identity": "Configured" if identity_configured else "Not configured",
                        "employment": "Manual evidence review", "education": "Manual evidence review",
-                       "email": "Copy invitation link; no email is sent", "hosting": "Local pilot",
+                       "email": "SMTP configured" if email_ready() else "Copy invitation link; no email is sent", "hosting": "Vercel + Railway",
                        "screening": "No criminal, credit, or sanctions data sources connected",
                        "production": "Independent security, privacy, legal, and operational review required"},
             providers=[{"id": "stripe_identity", "name": "Stripe Identity", "configured": identity_configured,
@@ -936,5 +945,5 @@ button{background:#153d32;color:white;margin-top:24px;cursor:pointer}a{color:#15
 <form method="post" action="/login"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
 <label for="email">Work email</label><input type="email" id="email" name="email" autocomplete="username" required maxlength="254">
 <label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" required>
-<button type="submit">Sign in</button></form><p><a href="/about">About Vetra</a></p>
+<button type="submit">Sign in</button></form><p><a href="/forgot-password">Forgot password?</a> · <a href="/about">About Vetra</a></p>
 {% if demo %}<p><a href="/">Open fictional demo</a></p>{% endif %}</main></body></html>"""
