@@ -22,9 +22,9 @@ async function copyLink(link) {
   try { await navigator.clipboard.writeText(value); toast('Candidate link copied. Share it through your approved channel.'); }
   catch { const field=document.querySelector('.invitation-url'); if(field){field.focus();field.select();toast('Select and copy the invitation link.');} else { toast('Clipboard unavailable. The invitation link is shown below.'); } }
 }
-function invitationMarkup(link) {
+function invitationMarkup(link, delivery="manual") {
   const full=new URL(link,location.origin).href;
-  return '<div class="invitation-result"><h3>The invitation is ready.</h3><p>No email has been sent. Share this private link with the candidate through your approved channel. It expires in seven days.</p><div class="copy-row"><input class="invitation-url" readonly aria-label="Private candidate invitation link" value="' + e(full) + '"><button class="button" id="copy-link">Copy link</button></div><a class="text-link" href="' + e(link) + '" target="_blank" rel="noopener noreferrer">Preview the candidate experience ' + icon('arrow') + '</a></div>';
+  return '<div class="invitation-result"><h3>The invitation is ready.</h3><p>' + (delivery==='email' ? 'Invitation accepted by the mail server. Confirm receipt with the candidate.' : 'Email was not sent. Share this private link through your approved channel.') + ' It expires in seven days.</p><div class="copy-row"><input class="invitation-url" readonly aria-label="Private candidate invitation link" value="' + e(full) + '"><button class="button" id="copy-link">Copy link</button></div><a class="text-link" href="' + e(link) + '" target="_blank" rel="noopener noreferrer">Preview the candidate experience ' + icon('arrow') + '</a></div>';
 }
 function heading(title, description, actions='') { return '<div class="page-heading"><div><h1>' + e(title) + '</h1><p>' + e(description) + '</p></div><div class="actions">' + actions + '</div></div>'; }
 function focusHeading() { const heading=root.querySelector('h1'); if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});} }
@@ -83,13 +83,13 @@ async function renderOverview(view) {
 function renderNew() {
   if(!canEdit){root.innerHTML=heading('You have read-only access.','An owner or reviewer can invite candidates.');return;}
   root.innerHTML=heading('Start with a simple invitation.','The candidate stays informed and in control.','<a class="button" href="#candidates">Back to candidates</a>') +
-    '<section class="panel form-panel"><form id="invite-form"><div class="form-grid"><div class="field"><label for="candidate-name">Full name</label><input id="candidate-name" name="name" autocomplete="name" placeholder="e.g. Alex Morgan" required maxlength="120"></div><div class="field"><label for="candidate-email">Email address</label><input id="candidate-email" name="email" type="email" autocomplete="email" placeholder="alex@example.com" required maxlength="254"></div><div class="field full"><label for="candidate-role">Hiring role</label><input id="candidate-role" name="role" placeholder="e.g. Product designer" required maxlength="160"></div><div class="field full"><label for="candidate-package">Verification scope</label><select id="candidate-package" name="package"><option value="Essential">Essential · Identity & employment</option><option value="Professional">Professional · Identity, employment, education & professional profile</option></select><small>Identity requires a configured provider. Credential checks use source-based manual review in this pilot.</small></div></div><div class="info-note">A private invitation link will be created. No checks begin until the candidate approves the scope. This workspace does not send invitation emails.</div><div class="form-actions"><button class="button primary" type="submit">' + icon('plus') + 'Create invitation</button><a class="button" href="#candidates">Cancel</a></div><div class="form-error" id="invite-error" role="alert"></div></form><div id="invitation-result"></div></section>';
+    '<section class="panel form-panel"><form id="invite-form"><div class="form-grid"><div class="field"><label for="candidate-name">Full name</label><input id="candidate-name" name="name" autocomplete="name" placeholder="e.g. Alex Morgan" required maxlength="120"></div><div class="field"><label for="candidate-email">Email address</label><input id="candidate-email" name="email" type="email" autocomplete="email" placeholder="alex@example.com" required maxlength="254"></div><div class="field full"><label for="candidate-role">Hiring role</label><input id="candidate-role" name="role" placeholder="e.g. Product designer" required maxlength="160"></div><div class="field full"><label for="candidate-package">Verification scope</label><select id="candidate-package" name="package"><option value="Essential">Essential · Identity & employment</option><option value="Professional">Professional · Identity, employment, education & professional profile</option></select><small>Identity requires a configured provider. Credential checks use source-based manual review in this pilot.</small></div></div><div class="info-note">A private invitation link will be created. No checks begin until the candidate approves the scope. Email delivery is attempted when a sender is configured; otherwise copy the link.</div><div class="form-actions"><button class="button primary" type="submit">' + icon('plus') + 'Create invitation</button><a class="button" href="#candidates">Cancel</a></div><div class="form-error" id="invite-error" role="alert"></div></form><div id="invitation-result"></div></section>';
   document.getElementById('invite-form').addEventListener('submit',async event=>{
     event.preventDefault();const form=event.target;const button=form.querySelector('button[type="submit"]');button.disabled=true;button.textContent='Creating invitation…';
     document.getElementById('invite-error').textContent='';
     try {
       const data=await api('/api/candidates','POST',Object.fromEntries(new FormData(form)));
-      document.getElementById('invitation-result').innerHTML=invitationMarkup(data.invitation_url) + '<div class="form-actions"><a class="button primary" href="#candidate/' + e(data.candidate.id) + '">Open candidate case ' + icon('arrow') + '</a></div>';
+      document.getElementById('invitation-result').innerHTML=invitationMarkup(data.invitation_url,data.delivery) + '<div class="form-actions"><a class="button primary" href="#candidate/' + e(data.candidate.id) + '">Open candidate case ' + icon('arrow') + '</a></div>';
       document.getElementById('copy-link').onclick=()=>copyLink(data.invitation_url);
       button.textContent='Invitation created';form.querySelectorAll('input,select').forEach(input=>input.disabled=true);
       toast('Invitation created. Candidate approval is the next step.');await overviewData();
@@ -129,7 +129,7 @@ async function renderCandidate(id) {
   }));
   document.getElementById('reissue-link')?.addEventListener('click',async event=>{
     event.target.disabled=true;
-    try{const result=await api('/api/candidates/' + encodeURIComponent(id) + '/invite','POST',{});document.getElementById('detail-invitation').innerHTML=invitationMarkup(result.invitation_url);document.getElementById('copy-link').onclick=()=>copyLink(result.invitation_url);toast('New invitation link created. Older links have been revoked.');}
+    try{const result=await api('/api/candidates/' + encodeURIComponent(id) + '/invite','POST',{});document.getElementById('detail-invitation').innerHTML=invitationMarkup(result.invitation_url,result.delivery);document.getElementById('copy-link').onclick=()=>copyLink(result.invitation_url);toast('New invitation link created. Older links have been revoked.');}
     catch(error){toast(error.message);event.target.disabled=false;}
   });
   focusHeading();
@@ -150,7 +150,8 @@ async function renderSettings() {
     ['Identity verification',identityProvider?.configured || data.capabilities?.identity_provider ? 'Configured · verify provider account readiness' : 'Stripe Identity · not connected'],
     ['Employment & education','Source-based manual review'],
     ['Criminal records & right to work','Provider not connected'],
-    ['Invitation email','Manual link delivery'],
+    ['Invitation email',data.capabilities?.email_delivery ? 'SMTP configured' : 'Manual link delivery'],
+    ['Pilot billing',data.capabilities?.billing ? 'Live checkout configured' : 'Account setup required'],
     ['Suitability scoring','Not part of the product']
   ];
   host.innerHTML=known.map(([name,value])=>'<div class="capability-row"><strong>' + e(name) + '</strong><span>' + e(value) + '</span></div>').join('');

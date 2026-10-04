@@ -34,6 +34,22 @@
     {
       "source": "/healthz",
       "destination": "https://vetra-api-production-0262.up.railway.app/healthz"
+    },
+    {
+      "source": "/pilot",
+      "destination": "https://vetra-api-production-0262.up.railway.app/pilot"
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://vetra-api-production-0262.up.railway.app/privacy"
+    },
+    {
+      "source": "/forgot-password",
+      "destination": "https://vetra-api-production-0262.up.railway.app/forgot-password"
+    },
+    {
+      "source": "/reset-password/:path*",
+      "destination": "https://vetra-api-production-0262.up.railway.app/reset-password/:path*"
     }
   ],
   "headers": [
