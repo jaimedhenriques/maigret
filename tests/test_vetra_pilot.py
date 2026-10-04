@@ -5,10 +5,8 @@ import sqlite3
 from datetime import datetime,timedelta,timezone
 
 import pytest
-from cryptography.fernet import Fernet,InvalidToken
 from vetra import create_app
 from vetra.store import get_db
-from vetra.operations import backup,restore,retention_candidates
 
 @pytest.fixture
 def app(tmp_path):
@@ -78,6 +76,9 @@ def test_time_logs_cannot_cross_tenants(app):
     assert c.post('/api/pilot/time',json={'candidate_id':'foreign','minutes':True,'baseline_minutes':30},headers=headers(c)).status_code==400
 
 def test_encrypted_backup_restore_and_wrong_key(app,tmp_path):
+    crypto = pytest.importorskip("cryptography.fernet", reason="Backup tools use standalone Vetra dependencies")
+    Fernet, InvalidToken = crypto.Fernet, crypto.InvalidToken
+    from vetra.operations import backup,restore,retention_candidates
     key=Fernet.generate_key();archive=tmp_path/'sealed.backup';dest=tmp_path/'restored.db'
     backup(app.config['DATABASE'],archive,key)
     assert not archive.read_bytes().startswith(b'SQLite')
