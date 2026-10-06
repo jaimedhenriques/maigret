@@ -937,7 +937,7 @@ _LOGIN_PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sign in · Verisento</title><style>
 body{margin:0;font:16px system-ui;color:#182a30;background:#f2f5f3;display:grid;place-items:center;min-height:100vh}
-main{background:white;padding:40px;border-radius:20px;max-width:360px;width:80%;box-shadow:0 8px 40px #102a1010}
+main{box-sizing:border-box;background:white;padding:32px;border-radius:20px;max-width:440px;width:calc(100% - 32px);box-shadow:0 8px 40px #102a1010}
 label{display:block;margin-top:20px}input,button{box-sizing:border-box;width:100%;padding:13px;border-radius:8px;border:1px solid #b6c4c0;margin-top:7px;font:inherit}
 button{background:#153d32;color:white;margin-top:24px;cursor:pointer}a{color:#153d32}.error{color:#ad3228}
 </style></head><body><main><h1>Welcome to Verisento</h1><p>Sign in to your verification workspace.</p>
