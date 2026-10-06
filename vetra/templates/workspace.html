@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="csrf-token" content="{{ csrf_token }}"><meta name="description" content="Verisento candidate verification workspace.">
+  <meta name="csrf-token" content="{{ csrf_token }}"><meta name="description" content="Verisento candidate verification workspace."><meta name="robots" content="noindex,nofollow">
   <title>Workspace · Verisento</title>
-  <link rel="icon" href="/static/vetra.svg" type="image/svg+xml"><link rel="stylesheet" href="/static/workspace.css">
+  <link rel="icon" href="/static/vetra.svg" type="image/svg+xml"><link rel="preload" href="/static/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/static/workspace.css">
   <script src="/static/workspace.js" defer></script>
 </head>
 <body data-demo="{{ 'true' if demo else 'false' }}" data-role="{{ user.role }}">
@@ -21,24 +21,27 @@
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 1 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M8 18V6m-3 3 3-3 3 3M16 6v12m-3-3 3 3 3-3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
 </defs></svg>
-<aside class="sidebar">
-  <a class="brand" href="/" aria-label="Verisento workspace"><img src="/static/vetra.svg" alt="" width="34" height="34">verisento<span class="brand-dot">.</span></a>
-  <div class="organization"><span class="org-avatar">{{ user.organization[:1] }}</span><div><strong>{{ user.organization }}</strong><span>Hiring workspace</span></div></div>
-  <nav aria-label="Workspace navigation">
-    <a href="/pilot">Pilot operations</a>
-    <a href="#overview" class="nav-link active" data-view="overview"><svg class="icon"><use href="#i-grid"/></svg>Overview</a>
-    <a href="#candidates" class="nav-link" data-view="candidates"><svg class="icon"><use href="#i-users"/></svg>Candidates<span class="nav-count" id="candidate-count">—</span></a>
-    <a href="#review" class="nav-link" data-view="review"><svg class="icon"><use href="#i-shield"/></svg>Review queue<span class="nav-count" id="review-count">—</span></a>
-    <a href="#audit" class="nav-link" data-view="audit"><svg class="icon"><use href="#i-clock"/></svg>Audit trail</a>
-    <a href="#settings" class="nav-link" data-view="settings"><svg class="icon"><use href="#i-settings"/></svg>Workspace settings</a>
+<aside class="sidebar" id="workspace-sidebar" data-expanded="false">
+  <div class="sidebar-head"><a class="brand" href="/" aria-label="Verisento home"><img src="/static/vetra.svg" alt="" width="32" height="32"><span>verisento<span class="brand-dot">.</span></span></a><button id="nav-toggle" class="mobile-nav-toggle" aria-label="Open workspace navigation" aria-controls="workspace-navigation" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg><span>Menu</span></button></div>
+  <div class="organization"><span class="org-avatar" aria-hidden="true">{{ user.organization[:1] }}</span><div><strong>{{ user.organization }}</strong><span>Hiring workspace</span></div></div>
+  <nav id="workspace-navigation" aria-label="Workspace navigation">
+    <a href="#overview" class="nav-link active" data-view="overview"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Overview</a>
+    <a href="#candidates" class="nav-link" data-view="candidates"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Candidates<span class="nav-count" id="candidate-count">—</span></a>
+    <a href="#review" class="nav-link" data-view="review"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Review queue<span class="nav-count" id="review-count">—</span></a>
+    <a href="#audit" class="nav-link" data-view="audit"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Audit trail</a>
+    <a href="#settings" class="nav-link" data-view="settings"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg>Settings</a>
+    <a href="/pilot" class="nav-link"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Pilot operations<svg class="icon nav-external" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </nav>
-  <div class="sidebar-bottom"><div class="pilot-note"><svg class="icon"><use href="#i-shield"/></svg><strong>Built around candidate consent</strong><p>Clear scope. Evidence with a source. A human in the loop.</p><a href="/about">About Verisento <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><div class="user-block"><span class="avatar">{{ user.name[:1] }}</span><div><strong>{{ user.name }}</strong><span>{{ user.role | capitalize }}</span></div><button id="logout" class="text-button" title="Sign out" aria-label="Sign out"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div>
+  <div class="sidebar-bottom"><div class="pilot-note"><strong>Evidence with context.</strong><p>Candidate approval first. Clear sources. A human review.</p><a href="/privacy">Candidate privacy notice <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><div class="user-block"><span class="avatar" aria-hidden="true">{{ user.name[:1] }}</span><div><strong>{{ user.name }}</strong><span>{{ user.role | capitalize }}</span></div><button id="logout" class="text-button" title="Sign out" aria-label="Sign out"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div>
 </aside>
 <div class="app-shell">
-  <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb">Overview</strong></div><div class="topbar-right">{% if demo %}<span class="demo-tag">Demo workspace · fictional data</span>{% else %}<span class="demo-tag">Pilot workspace</span>{% endif %}<a href="/about" class="topbar-link">Product & pricing</a><span class="avatar compact">{{ user.name[:1] }}</span><button id="logout-mobile" class="text-button mobile-signout" aria-label="Sign out">Sign out</button></div></header>
-  <main id="main" tabindex="-1"><div id="view-content"><div class="loading-state" role="status">Loading your workspace…</div></div></main>
-  <footer class="app-footer"><span>Verisento · Confidence starts with proof.</span><span>Candidate-controlled verification</span></footer>
+  <header class="topbar"><div class="breadcrumb"><span class="breadcrumb-parent">Workspace</span><span class="breadcrumb-separator" aria-hidden="true">/</span><strong id="breadcrumb">Overview</strong></div><div class="topbar-right">{% if demo %}<span class="demo-tag">Fictional demo data</span>{% else %}<span class="demo-tag">Pilot workspace</span>{% endif %}<a href="/about" class="topbar-link">Product overview</a><span class="avatar compact" aria-hidden="true">{{ user.name[:1] }}</span><button id="logout-mobile" class="text-button mobile-signout">Sign out</button></div></header>
+  <main id="main" tabindex="-1"><div id="view-content" aria-busy="true"><div class="loading-state" role="status"><span class="loading-line"></span><span class="loading-line short"></span><p>Loading your workspace…</p></div></div></main>
+  <footer class="app-footer"><span>Verisento · Confidence starts with proof.</span><a href="/privacy">Privacy & candidate rights</a></footer>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body></html>

@@ -33,6 +33,7 @@ def create_app(config: dict | None = None) -> Flask:
     app = Flask(__name__)
     app.config.from_mapping(
         DEMO=_env_bool("VETRA_DEMO"),
+        BILLING_ENABLED=_env_bool("VETRA_BILLING_ENABLED", False),
         DATABASE=os.environ.get("VETRA_DATABASE", str(Path.cwd() / "instance" / "vetra.sqlite3")),
         SECRET_KEY=os.environ.get("VETRA_SECRET_KEY"),
         ADMIN_EMAIL=os.environ.get("VETRA_ADMIN_EMAIL", ""),
@@ -247,12 +248,14 @@ def create_app(config: dict | None = None) -> Flask:
     def candidate_detail(candidate_id):
         candidate = _get_candidate(candidate_id)
         checks = [] if candidate["status"] == "withdrawn" else [dict(r) for r in get_db().execute(
-            "SELECT id,kind,label,status,source,notes,provider,sample,reviewed_at,reviewed_by "
+            "SELECT id,kind,label,status,source,notes,provider,sample,reviewed_at,reviewed_by, "
+            "provider_session_id IS NOT NULL AS has_provider_session "
             "FROM checks WHERE tenant_id=? AND candidate_id=? ORDER BY rowid",
             (g.user["tenant_id"], candidate_id),
         ).fetchall()]
         for check in checks:
             check["sample"] = bool(check["sample"])
+            check["has_provider_session"] = bool(check["has_provider_session"])
         corrections = [] if candidate["status"] == "withdrawn" else [dict(r) for r in get_db().execute(
             "SELECT id,message,status,resolution_notes,created_at,resolved_at FROM corrections "
             "WHERE tenant_id=? AND candidate_id=? ORDER BY id DESC", (g.user["tenant_id"], candidate_id)
@@ -935,15 +938,12 @@ def _safe_csv_cell(value):
 
 _LOGIN_PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sign in · Verisento</title><style>
-body{margin:0;font:16px system-ui;color:#182a30;background:#f2f5f3;display:grid;place-items:center;min-height:100vh}
-main{box-sizing:border-box;background:white;padding:32px;border-radius:20px;max-width:440px;width:calc(100% - 32px);box-shadow:0 8px 40px #102a1010}
-label{display:block;margin-top:20px}input,button{box-sizing:border-box;width:100%;padding:13px;border-radius:8px;border:1px solid #b6c4c0;margin-top:7px;font:inherit}
-button{background:#153d32;color:white;margin-top:24px;cursor:pointer}a{color:#153d32}.error{color:#ad3228}
-</style></head><body><main><h1>Welcome to Verisento</h1><p>Sign in to your verification workspace.</p>
+<title>Sign in · Verisento</title><link rel="icon" href="/static/vetra.svg" type="image/svg+xml"><link rel="stylesheet" href="/static/operations.css">
+</head><body class="account-body"><main class="auth-main"><a class="account-brand" href="/about" aria-label="Verisento home">verisento<span>.</span></a><h1>Welcome back.</h1><p>Sign in to your hiring workspace.</p>
 {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
 <form method="post" action="/login"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-<label for="email">Work email</label><input type="email" id="email" name="email" autocomplete="username" required maxlength="254">
+<label for="email">Work email</label><input type="email" id="email" name="email" autocomplete="username" required maxlength="254" placeholder="you@company.com">
 <label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" required>
-<button type="submit">Sign in</button></form><p><a href="/forgot-password">Forgot password?</a> · <a href="/about">About Verisento</a></p>
+<p class="recovery-link"><a href="/forgot-password">Forgot your password?</a></p>
+<button type="submit">Sign in</button></form><p class="account-note">Free early access. No payment required.</p><p class="account-links"><a href="/about">About Verisento</a> · <a href="/privacy">Privacy</a></p>
 {% if demo %}<p><a href="/">Open fictional demo</a></p>{% endif %}</main></body></html>"""

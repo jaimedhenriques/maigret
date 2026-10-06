@@ -1,1 +1,9 @@
-{"name":"vetra-frontend","private":true,"scripts":{"build":"node frontend/build.mjs"}}
+{
+  "name": "verisento-frontend",
+  "private": true,
+  "scripts": {
+    "build": "node frontend/build.mjs",
+    "design:21st": "python3 scripts/21st-client.py",
+    "design:skills": "python3 scripts/design-tools.py hydrate"
+  }
+}

@@ -87,6 +87,22 @@ def test_demo_is_explicit_and_never_provider_verified(client):
         assert all(c["status"] != "verified" for c in checks)
 
 
+def test_staff_can_see_session_presence_without_provider_session_credentials(app, client):
+    cid, _ = invite(client)
+    identity_id = check_id(client, cid)
+    checks = client.get(f"/api/candidates/{cid}").json["checks"]
+    assert all(check["has_provider_session"] is False for check in checks)
+    with app.app_context():
+        db = get_db()
+        with db:
+            db.execute("UPDATE checks SET provider_session_id=? WHERE id=?", ("vs_private_fixture", identity_id))
+    response = client.get(f"/api/candidates/{cid}")
+    identity = next(check for check in response.json["checks"] if check["id"] == identity_id)
+    assert identity["has_provider_session"] is True
+    assert "provider_session_id" not in identity
+    assert b"vs_private_fixture" not in response.data
+
+
 def test_csrf_required_on_staff_and_candidate_mutations(app, client):
     assert client.post("/api/candidates", json={}).status_code == 403
     assert client.post("/api/logout", json={}, headers={"X-CSRF-Token": "wrong"}).status_code == 403

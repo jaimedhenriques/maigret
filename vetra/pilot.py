@@ -115,8 +115,18 @@ def reset_password(token):
     return render_template('account.html',title='Choose a new password',kind='reset',message=error,csrf_token=session['csrf'])
 
 
-def billing_ready():
+def billing_configured():
+    """Configuration remains available to reconcile existing payment sessions."""
     return bool(os.environ.get('STRIPE_SECRET_KEY','').startswith(('sk_live_','rk_live_')) and os.environ.get('STRIPE_PILOT_PRICE_ID','').startswith('price_') and os.environ.get('STRIPE_BILLING_WEBHOOK_SECRET','').startswith('whsec_') and current_app.config['PUBLIC_URL'].startswith('https://'))
+
+
+def billing_enabled():
+    """Only an explicit server setting can enable creating new paid sessions."""
+    return current_app.config.get('BILLING_ENABLED', False) is True
+
+
+def billing_ready():
+    return billing_enabled() and billing_configured()
 
 
 @bp.get('/pilot')
@@ -125,10 +135,15 @@ def pilot_page():
         return redirect('/login')
     db=get_db(); tenant=g.user['tenant_id']
     counts=dict(db.execute('SELECT status,COUNT(*) FROM candidates WHERE tenant_id=? AND sample=0 GROUP BY status',(tenant,)).fetchall())
-    durations=[r[0] for r in db.execute("SELECT (julianday(updated_at)-julianday(consent_at))*24 FROM candidates WHERE tenant_id=? AND sample=0 AND status='completed' AND consent_at IS NOT NULL",(tenant,))]
+    durations=[r[0] for r in db.execute("SELECT (julianday(updated_at)-julianday(consent_at))*24 FROM candidates WHERE tenant_id=? AND sample=0 AND status='completed' AND consent_at IS NOT NULL AND updated_at>=consent_at",(tenant,))]
     times=db.execute('SELECT COALESCE(SUM(baseline_minutes-minutes),0),COUNT(*) FROM pilot_time_logs WHERE tenant_id=?',(tenant,)).fetchone()
     paid=db.execute("SELECT 1 FROM pilot_payments WHERE tenant_id=? AND status='paid' LIMIT 1",(tenant,)).fetchone()
-    return render_template('pilot.html',csrf_token=session['csrf'],owner=g.user['role']=='owner',billing=billing_ready(),email=email_ready(),paid=bool(paid),counts=counts,total=sum(counts.values()),hours=round(sum(durations)/len(durations),1) if durations else None,saved=times[0],measurements=times[1])
+    cases=db.execute("SELECT id,name FROM candidates WHERE tenant_id=? AND sample=0 AND consent=1 AND status!='withdrawn' ORDER BY name COLLATE NOCASE",(tenant,)).fetchall()
+    from .app import _provider, _valid_public_url
+    provider=_provider()
+    identity=bool(provider and provider.is_configured and getattr(provider,'is_live',False) and _valid_public_url(current_app.config['PUBLIC_URL']))
+    privacy_complete=all(os.environ.get(k) for k in ('VETRA_LEGAL_NAME','VETRA_LEGAL_ADDRESS','VETRA_PRIVACY_EMAIL'))
+    return render_template('pilot.html',csrf_token=session['csrf'],owner=g.user['role']=='owner',can_measure=g.user['role']!='viewer',billing=billing_ready(),billing_enabled=billing_enabled(),email=email_ready(),identity=identity,privacy_complete=privacy_complete,paid=bool(paid),counts=counts,total=sum(counts.values()),hours=round(sum(durations)/len(durations),1) if durations else None,duration_count=len(durations),saved=times[0],measurements=times[1],cases=cases)
 
 
 @bp.post('/api/pilot/time')
@@ -141,13 +156,17 @@ def log_time():
     if type(minutes)!=int or type(baseline)!=int or not 0<=minutes<=10080 or not 0<=baseline<=10080:return jsonify(error='Enter measured and baseline minutes between 0 and 10080.'),400
     db=get_db()
     if not db.execute("SELECT 1 FROM candidates WHERE tenant_id=? AND id=? AND sample=0 AND consent=1 AND status!='withdrawn'",(g.user['tenant_id'],cid)).fetchone():return jsonify(error='Consented case not found.'),404
-    with db:db.execute('INSERT INTO pilot_time_logs(tenant_id,candidate_id,minutes,baseline_minutes,created_at) VALUES (?,?,?,?,?)',(g.user['tenant_id'],cid,minutes,baseline,now_iso()))
-    return jsonify(ok=True)
+    with db:
+        db.execute('INSERT INTO pilot_time_logs(tenant_id,candidate_id,minutes,baseline_minutes,created_at) VALUES (?,?,?,?,?)',(g.user['tenant_id'],cid,minutes,baseline,now_iso()))
+        audit(g.user['tenant_id'],'pilot.effort_recorded','HR effort measurement recorded',candidate_id=cid,actor_id=g.user['id'])
+    totals=db.execute('SELECT COALESCE(SUM(baseline_minutes-minutes),0),COUNT(*) FROM pilot_time_logs WHERE tenant_id=?',(g.user['tenant_id'],)).fetchone()
+    return jsonify(ok=True,saved_minutes=totals[0],measurements=totals[1])
 
 
 @bp.post('/api/billing/checkout')
 def checkout():
     if not staff(True):return jsonify(error='Workspace owner access required.'),403
+    if not billing_enabled():return jsonify(error='Early access is free. Paid checkout is disabled; no payment is required.'),503
     if current_app.config['DEMO'] or not billing_ready():return jsonify(error='Live billing is not configured. Contact your workspace owner.'),503
     base=current_app.config['PUBLIC_URL'].rstrip('/')
     fields={'mode':'payment','line_items[0][price]':os.environ['STRIPE_PILOT_PRICE_ID'],'line_items[0][quantity]':'1','success_url':base+'/pilot?payment=returned','cancel_url':base+'/pilot','client_reference_id':g.user['tenant_id'],'metadata[tenant_id]':g.user['tenant_id']}
@@ -164,7 +183,7 @@ def checkout():
 @bp.post('/api/webhooks/billing')
 def billing_webhook():
     provider=StripeIdentityProvider(os.environ.get('STRIPE_SECRET_KEY',''),os.environ.get('STRIPE_BILLING_WEBHOOK_SECRET',''))
-    if not billing_ready():return jsonify(error='Billing not configured.'),503
+    if not billing_configured():return jsonify(error='Billing not configured.'),503
     try:event=provider.verify_webhook(request.get_data(),request.headers.get('Stripe-Signature',''))
     except ProviderError:return jsonify(error='Invalid signature.'),400
     if event['type'] not in ('checkout.session.completed','checkout.session.async_payment_succeeded','checkout.session.async_payment_failed','checkout.session.expired'):return jsonify(received=True)
@@ -189,6 +208,7 @@ def privacy():
 
 
 def init_pilot(app):
+    app.config.setdefault('BILLING_ENABLED', os.environ.get('VETRA_BILLING_ENABLED','false').strip().lower() in ('true','1','yes'))
     with app.app_context():
         db=get_db();db.executescript(SCHEMA)
         if 'auth_version' not in {r['name'] for r in db.execute('PRAGMA table_info(users)')}:

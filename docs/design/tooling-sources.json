@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "audited_at": "2026-10-06",
+  "project": "Verisento",
+  "cache_directory": ".design-toolchain",
+  "notes": [
+    "Sources are pinned to audited commits. Hydrated files are ignored and never shipped.",
+    "This is a source/provenance manifest, not a claim that all workflows were executed.",
+    "21st.dev account/MCP and Figma/Product Design are connected capabilities configured separately; never put keys in this manifest.",
+    "tasteskill.dev links to Leonxlnx/taste-skill; current v2 is contextual and excludes dense app/data-table workflows."
+  ],
+  "packages": [
+    {
+      "name": "@playwright/cli",
+      "version": "0.1.22",
+      "license": "Apache-2.0",
+      "integrity": "sha512-6WMkQNM4VEzqMkdr/l60X9Cr7i+tI/arK87IWz2K7pB6j8I2ZJ8KN+1JfhJDLnK+SXnab6Op8xGt4adcGLsyfA=="
+    },
+    {
+      "name": "shadcn",
+      "version": "4.21.3",
+      "license": "MIT",
+      "integrity": "sha512-r88yKaFvIwz2DInrE/DZn0XZVSuKWahouQVJBjYxVAcZ3GRkfh+3VDhIeCc18eYiIOuMgZoGaPYjhzhaON2mzw=="
+    },
+    {
+      "name": "skillui",
+      "version": "1.3.4",
+      "license": "MIT-declared-in-npm",
+      "integrity": "sha512-zdVlZTvqGYeL07HQ6/D3y7b9YtENYvXN666x2hPNs6FTzgvnJ3cMHSI6wNKIzIyLaqLEjr12YTIezQCowYV1bg==",
+      "installed": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "apple-design",
+      "repository": "emilkowalski/skills",
+      "revision": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "homepage": "https://github.com/emilkowalski/skills",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "skills/apple-design/SKILL.md",
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [
+        "skills/apple-design/"
+      ],
+      "scope": "Apply to interaction, motion, typography, and accessibility."
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "477bcb28c9812b385cb51a4605ddf30d7b2266e2",
+      "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [
+        ".claude/skills/ui-ux-pro-max/"
+      ],
+      "scope": "Search design systems and focused UX outcomes using the detected stack."
+    },
+    {
+      "id": "taste-skill",
+      "repository": "Leonxlnx/taste-skill",
+      "revision": "e3c92037548e3e49bea8e6b906c99a8549654e71",
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "skills/taste-skill/SKILL.md",
+        "skills/taste-skill-v1/SKILL.md",
+        "skills/gpt-tasteskill/SKILL.md",
+        "skills/image-to-code-skill/SKILL.md",
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [],
+      "scope": "Current TasteSkill applies to marketing; image-to-code applies to visual redesign references. Older alternative versions are reference-only."
+    },
+    {
+      "id": "web-design-skill",
+      "repository": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "license": "not-found-in-checkout",
+      "redistribution": false,
+      "files": [
+        "skills/web-design-guidelines/SKILL.md",
+        "README.md"
+      ],
+      "directories": [],
+      "scope": "Read-only linked skill instructions; no root redistribution license found."
+    },
+    {
+      "id": "web-interface-guidelines",
+      "repository": "vercel-labs/web-interface-guidelines",
+      "revision": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "homepage": "https://github.com/vercel-labs/web-interface-guidelines",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "command.md",
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [],
+      "scope": "Refresh before each UI review; preserve this pinned audit snapshot for provenance."
+    },
+    {
+      "id": "awesome-design",
+      "repository": "VoltAgent/awesome-design-md",
+      "revision": "13be5c05c63be24b57581162364167028020f043",
+      "homepage": "https://github.com/VoltAgent/awesome-design-md",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "README.md",
+        "LICENSE"
+      ],
+      "directories": [],
+      "scope": "Catalog of design systems and reference sources, not an executable skill."
+    },
+    {
+      "id": "playwright-cli",
+      "repository": "microsoft/playwright-cli",
+      "revision": "b85c7a736bb473bf55b584e54a09ffa698d6d871",
+      "homepage": "https://github.com/microsoft/playwright-cli",
+      "license": "Apache-2.0",
+      "redistribution": true,
+      "files": [
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [
+        "skills/playwright-cli/"
+      ],
+      "scope": "Use installed CLI for browser checks; protect auth state and candidate content."
+    },
+    {
+      "id": "shadcn",
+      "repository": "shadcn-ui/ui",
+      "revision": "e8c3143b1cd191280befcd6c9538284bb43399a8",
+      "homepage": "https://github.com/shadcn-ui/ui",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "LICENSE.md",
+        "README.md"
+      ],
+      "directories": [
+        "skills/shadcn/"
+      ],
+      "scope": "Search and inspect existing components and docs before authoring or updating components."
+    },
+    {
+      "id": "shadcn-user-fork",
+      "repository": "jaimedhenriques/ui",
+      "revision": "f4fc4ab0492b597378f78cd5805234407945b5a8",
+      "homepage": "https://github.com/jaimedhenriques/ui",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "LICENSE.md",
+        "README.md"
+      ],
+      "directories": [
+        "skills/shadcn/"
+      ],
+      "scope": "Compare the user fork with upstream before copying; no invented public component registry."
+    },
+    {
+      "id": "impeccable",
+      "repository": "pbakaus/impeccable",
+      "revision": "2a26f1c50b9c4f86d10c0fec8f74cf523a2236e7",
+      "homepage": "https://github.com/pbakaus/impeccable",
+      "license": "Apache-2.0",
+      "redistribution": true,
+      "files": [
+        "LICENSE",
+        "README.md",
+        ".agents/skills/impeccable/scripts/impeccable",
+        ".agents/skills/impeccable/scripts/VERSION"
+      ],
+      "directories": [
+        ".agents/skills/impeccable/"
+      ],
+      "scope": "Use context, relevant playbook, craft-floor before UI edits, bounded finish review."
+    },
+    {
+      "id": "anti-slop",
+      "repository": "miqdadbadjuber/anti-slop",
+      "revision": "388cbe3b6c37d5175b9f460015bb092ef9e34894",
+      "homepage": "https://github.com/miqdadbadjuber/anti-slop",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [
+        "skills/"
+      ],
+      "scope": "Apply core purpose test and appropriate UI, human, mobile, copywriting subskills during development."
+    },
+    {
+      "id": "skillui",
+      "repository": "amaancoderx/npxskillui",
+      "revision": "bc913a8d3503d6b2a683e4a3ac04ffe7304ac510",
+      "homepage": "https://github.com/amaancoderx/npxskillui",
+      "license": "not-found-in-checkout",
+      "redistribution": false,
+      "files": [
+        "README.md"
+      ],
+      "directories": [],
+      "scope": "Read-only source guidance; npm metadata declares MIT but checkout has no root license. No code vendored."
+    },
+    {
+      "id": "screenshot-to-code",
+      "repository": "abi/screenshot-to-code",
+      "revision": "d026163f586dfa8c5c10d28c36edd59a9d3b0e88",
+      "homepage": "https://github.com/abi/screenshot-to-code",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "README.md",
+        "LICENSE"
+      ],
+      "directories": [],
+      "scope": "Optional application for an authorized screenshot/Figma reference, requires model provider accounts."
+    },
+    {
+      "id": "website-cloner",
+      "repository": "JCodesMore/ai-website-cloner-template",
+      "revision": "ee3f5a2f31fd549b9593fa4f7cf6d2955ee593bb",
+      "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "license": "MIT",
+      "redistribution": true,
+      "files": [
+        "LICENSE",
+        "README.md"
+      ],
+      "directories": [
+        ".agents/skills/clone-website/"
+      ],
+      "scope": "Only run for an explicitly supplied and authorized source website; not required for an original redesign."
+    }
+  ]
+}

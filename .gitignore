@@ -61,3 +61,12 @@ docs/source/locale/**/*.mo
 
 /frontend/dist/
 /node_modules/
+
+/.design-toolchain/
+
+/.playwright-cli/
+
+# Local authenticated design client configuration
+.mcp.json
+.21st/auth.json
+.21st/token.json

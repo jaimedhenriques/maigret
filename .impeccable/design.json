@@ -1,1 +1,1065 @@
-{"version":1,"product":"Vetra","tokens":{"colors":{"paper":"#f6f7f9","white":"#ffffff","ink":"#172b3a","muted":"#63717d","line":"#e5e9ec","teal":"#147d6b","tealDark":"#0f6153","mint":"#e8f5ef","amber":"#946217"},"fontFamily":"Manrope, Arial, sans-serif","panelRadius":"14px","controlRadius":"8px"},"surfaces":{"workspace":{"mode":"operate","direction":"candidate verification workspace"},"portal":{"mode":"operate","direction":"candidate-controlled approval and claims"},"landing":{"mode":"persuade","direction":"clear product scope and paid pilot"}}}
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T21:54:41.389834+00:00",
+  "title": "Design System: Verisento",
+  "extensions": {
+    "colorMeta": {
+      "workspace-paper": {
+        "role": "neutral",
+        "displayName": "Workspace Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00541 95.10)",
+          "oklch(26.43% 0.00541 95.10)",
+          "oklch(37.86% 0.00541 95.10)",
+          "oklch(49.29% 0.00541 95.10)",
+          "oklch(60.71% 0.00541 95.10)",
+          "oklch(72.14% 0.00541 95.10)",
+          "oklch(83.57% 0.00541 95.10)",
+          "oklch(95.00% 0.00541 95.10)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--paper"
+      },
+      "workspace-surface": {
+        "role": "neutral",
+        "displayName": "Workspace Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--white"
+      },
+      "workspace-ink": {
+        "role": "neutral",
+        "displayName": "Workspace Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01241 160.40)",
+          "oklch(26.43% 0.01241 160.40)",
+          "oklch(37.86% 0.01241 160.40)",
+          "oklch(49.29% 0.01241 160.40)",
+          "oklch(60.71% 0.01241 160.40)",
+          "oklch(72.14% 0.01241 160.40)",
+          "oklch(83.57% 0.01241 160.40)",
+          "oklch(95.00% 0.01241 160.40)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--ink"
+      },
+      "workspace-muted": {
+        "role": "neutral",
+        "displayName": "Workspace Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.01638 138.72)",
+          "oklch(26.43% 0.01638 138.72)",
+          "oklch(37.86% 0.01638 138.72)",
+          "oklch(49.29% 0.01638 138.72)",
+          "oklch(60.71% 0.01638 138.72)",
+          "oklch(72.14% 0.01638 138.72)",
+          "oklch(83.57% 0.01638 138.72)",
+          "oklch(95.00% 0.01638 138.72)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--muted"
+      },
+      "workspace-line": {
+        "role": "neutral",
+        "displayName": "Workspace Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.00960 119.59)",
+          "oklch(26.43% 0.00960 119.59)",
+          "oklch(37.86% 0.00960 119.59)",
+          "oklch(49.29% 0.00960 119.59)",
+          "oklch(60.71% 0.00960 119.59)",
+          "oklch(72.14% 0.00960 119.59)",
+          "oklch(83.57% 0.00960 119.59)",
+          "oklch(95.00% 0.00960 119.59)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--line"
+      },
+      "workspace-forest": {
+        "role": "primary",
+        "displayName": "Workspace Forest",
+        "tonalRamp": [
+          "oklch(15.00% 0.06424 164.69)",
+          "oklch(26.43% 0.06424 164.69)",
+          "oklch(37.86% 0.06424 164.69)",
+          "oklch(49.29% 0.06424 164.69)",
+          "oklch(60.71% 0.06424 164.69)",
+          "oklch(72.14% 0.06424 164.69)",
+          "oklch(83.57% 0.06424 164.69)",
+          "oklch(95.00% 0.06424 164.69)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--teal"
+      },
+      "workspace-forest-hover": {
+        "role": "primary",
+        "displayName": "Workspace Forest Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.05138 165.00)",
+          "oklch(26.43% 0.05138 165.00)",
+          "oklch(37.86% 0.05138 165.00)",
+          "oklch(49.29% 0.05138 165.00)",
+          "oklch(60.71% 0.05138 165.00)",
+          "oklch(72.14% 0.05138 165.00)",
+          "oklch(83.57% 0.05138 165.00)",
+          "oklch(95.00% 0.05138 165.00)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--teal-dark"
+      },
+      "workspace-mint": {
+        "role": "neutral",
+        "displayName": "Workspace Mint",
+        "tonalRamp": [
+          "oklch(15.00% 0.01237 137.78)",
+          "oklch(26.43% 0.01237 137.78)",
+          "oklch(37.86% 0.01237 137.78)",
+          "oklch(49.29% 0.01237 137.78)",
+          "oklch(60.71% 0.01237 137.78)",
+          "oklch(72.14% 0.01237 137.78)",
+          "oklch(83.57% 0.01237 137.78)",
+          "oklch(95.00% 0.01237 137.78)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--mint"
+      },
+      "workspace-amber": {
+        "role": "neutral",
+        "displayName": "Workspace Amber",
+        "tonalRamp": [
+          "oklch(15.00% 0.09207 73.72)",
+          "oklch(26.43% 0.09207 73.72)",
+          "oklch(37.86% 0.09207 73.72)",
+          "oklch(49.29% 0.09207 73.72)",
+          "oklch(60.71% 0.09207 73.72)",
+          "oklch(72.14% 0.09207 73.72)",
+          "oklch(83.57% 0.09207 73.72)",
+          "oklch(95.00% 0.09207 73.72)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--amber"
+      },
+      "workspace-amber-tint": {
+        "role": "neutral",
+        "displayName": "Workspace Amber Tint",
+        "tonalRamp": [
+          "oklch(15.00% 0.02767 88.75)",
+          "oklch(26.43% 0.02767 88.75)",
+          "oklch(37.86% 0.02767 88.75)",
+          "oklch(49.29% 0.02767 88.75)",
+          "oklch(60.71% 0.02767 88.75)",
+          "oklch(72.14% 0.02767 88.75)",
+          "oklch(83.57% 0.02767 88.75)",
+          "oklch(95.00% 0.02767 88.75)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--amber-bg"
+      },
+      "workspace-danger": {
+        "role": "neutral",
+        "displayName": "Workspace Danger",
+        "tonalRamp": [
+          "oklch(15.00% 0.11938 28.84)",
+          "oklch(26.43% 0.11938 28.84)",
+          "oklch(37.86% 0.11938 28.84)",
+          "oklch(49.29% 0.11938 28.84)",
+          "oklch(60.71% 0.11938 28.84)",
+          "oklch(72.14% 0.11938 28.84)",
+          "oklch(83.57% 0.11938 28.84)",
+          "oklch(95.00% 0.11938 28.84)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--danger"
+      },
+      "workspace-focus": {
+        "role": "neutral",
+        "displayName": "Workspace Focus",
+        "tonalRamp": [
+          "oklch(15.00% 0.06559 156.16)",
+          "oklch(26.43% 0.06559 156.16)",
+          "oklch(37.86% 0.06559 156.16)",
+          "oklch(49.29% 0.06559 156.16)",
+          "oklch(60.71% 0.06559 156.16)",
+          "oklch(72.14% 0.06559 156.16)",
+          "oklch(83.57% 0.06559 156.16)",
+          "oklch(95.00% 0.06559 156.16)"
+        ],
+        "source": "vetra/static/workspace.css",
+        "cssVariable": "--focus"
+      },
+      "workspace-rail": {
+        "role": "neutral",
+        "displayName": "Workspace Rail",
+        "tonalRamp": [
+          "oklch(15.00% 0.03090 164.38)",
+          "oklch(26.43% 0.03090 164.38)",
+          "oklch(37.86% 0.03090 164.38)",
+          "oklch(49.29% 0.03090 164.38)",
+          "oklch(60.71% 0.03090 164.38)",
+          "oklch(72.14% 0.03090 164.38)",
+          "oklch(83.57% 0.03090 164.38)",
+          "oklch(95.00% 0.03090 164.38)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-rail-brand": {
+        "role": "neutral",
+        "displayName": "Workspace Rail Brand",
+        "tonalRamp": [
+          "oklch(15.00% 0.00820 121.63)",
+          "oklch(26.43% 0.00820 121.63)",
+          "oklch(37.86% 0.00820 121.63)",
+          "oklch(49.29% 0.00820 121.63)",
+          "oklch(60.71% 0.00820 121.63)",
+          "oklch(72.14% 0.00820 121.63)",
+          "oklch(83.57% 0.00820 121.63)",
+          "oklch(95.00% 0.00820 121.63)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-rail-active": {
+        "role": "neutral",
+        "displayName": "Workspace Rail Active",
+        "tonalRamp": [
+          "oklch(15.00% 0.04595 156.56)",
+          "oklch(26.43% 0.04595 156.56)",
+          "oklch(37.86% 0.04595 156.56)",
+          "oklch(49.29% 0.04595 156.56)",
+          "oklch(60.71% 0.04595 156.56)",
+          "oklch(72.14% 0.04595 156.56)",
+          "oklch(83.57% 0.04595 156.56)",
+          "oklch(95.00% 0.04595 156.56)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-rail-muted": {
+        "role": "neutral",
+        "displayName": "Workspace Rail Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.02905 138.73)",
+          "oklch(26.43% 0.02905 138.73)",
+          "oklch(37.86% 0.02905 138.73)",
+          "oklch(49.29% 0.02905 138.73)",
+          "oklch(60.71% 0.02905 138.73)",
+          "oklch(72.14% 0.02905 138.73)",
+          "oklch(83.57% 0.02905 138.73)",
+          "oklch(95.00% 0.02905 138.73)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-neutral": {
+        "role": "neutral",
+        "displayName": "Workspace Status Neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.03082 131.27)",
+          "oklch(26.43% 0.03082 131.27)",
+          "oklch(37.86% 0.03082 131.27)",
+          "oklch(49.29% 0.03082 131.27)",
+          "oklch(60.71% 0.03082 131.27)",
+          "oklch(72.14% 0.03082 131.27)",
+          "oklch(83.57% 0.03082 131.27)",
+          "oklch(95.00% 0.03082 131.27)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-neutral-bg": {
+        "role": "neutral",
+        "displayName": "Workspace Status Neutral Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00822 121.63)",
+          "oklch(26.43% 0.00822 121.63)",
+          "oklch(37.86% 0.00822 121.63)",
+          "oklch(49.29% 0.00822 121.63)",
+          "oklch(60.71% 0.00822 121.63)",
+          "oklch(72.14% 0.00822 121.63)",
+          "oklch(83.57% 0.00822 121.63)",
+          "oklch(95.00% 0.00822 121.63)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-reviewed": {
+        "role": "neutral",
+        "displayName": "Workspace Status Reviewed",
+        "tonalRamp": [
+          "oklch(15.00% 0.07690 153.97)",
+          "oklch(26.43% 0.07690 153.97)",
+          "oklch(37.86% 0.07690 153.97)",
+          "oklch(49.29% 0.07690 153.97)",
+          "oklch(60.71% 0.07690 153.97)",
+          "oklch(72.14% 0.07690 153.97)",
+          "oklch(83.57% 0.07690 153.97)",
+          "oklch(95.00% 0.07690 153.97)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-reviewed-bg": {
+        "role": "neutral",
+        "displayName": "Workspace Status Reviewed Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.01713 128.66)",
+          "oklch(26.43% 0.01713 128.66)",
+          "oklch(37.86% 0.01713 128.66)",
+          "oklch(49.29% 0.01713 128.66)",
+          "oklch(60.71% 0.01713 128.66)",
+          "oklch(72.14% 0.01713 128.66)",
+          "oklch(83.57% 0.01713 128.66)",
+          "oklch(95.00% 0.01713 128.66)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-verified": {
+        "role": "neutral",
+        "displayName": "Workspace Status Verified",
+        "tonalRamp": [
+          "oklch(15.00% 0.07064 237.85)",
+          "oklch(26.43% 0.07064 237.85)",
+          "oklch(37.86% 0.07064 237.85)",
+          "oklch(49.29% 0.07064 237.85)",
+          "oklch(60.71% 0.07064 237.85)",
+          "oklch(72.14% 0.07064 237.85)",
+          "oklch(83.57% 0.07064 237.85)",
+          "oklch(95.00% 0.07064 237.85)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-verified-bg": {
+        "role": "neutral",
+        "displayName": "Workspace Status Verified Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.01011 228.89)",
+          "oklch(26.43% 0.01011 228.89)",
+          "oklch(37.86% 0.01011 228.89)",
+          "oklch(49.29% 0.01011 228.89)",
+          "oklch(60.71% 0.01011 228.89)",
+          "oklch(72.14% 0.01011 228.89)",
+          "oklch(83.57% 0.01011 228.89)",
+          "oklch(95.00% 0.01011 228.89)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-review": {
+        "role": "neutral",
+        "displayName": "Workspace Status Review",
+        "tonalRamp": [
+          "oklch(15.00% 0.09318 74.24)",
+          "oklch(26.43% 0.09318 74.24)",
+          "oklch(37.86% 0.09318 74.24)",
+          "oklch(49.29% 0.09318 74.24)",
+          "oklch(60.71% 0.09318 74.24)",
+          "oklch(72.14% 0.09318 74.24)",
+          "oklch(83.57% 0.09318 74.24)",
+          "oklch(95.00% 0.09318 74.24)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-progress": {
+        "role": "neutral",
+        "displayName": "Workspace Status Progress",
+        "tonalRamp": [
+          "oklch(15.00% 0.04315 230.63)",
+          "oklch(26.43% 0.04315 230.63)",
+          "oklch(37.86% 0.04315 230.63)",
+          "oklch(49.29% 0.04315 230.63)",
+          "oklch(60.71% 0.04315 230.63)",
+          "oklch(72.14% 0.04315 230.63)",
+          "oklch(83.57% 0.04315 230.63)",
+          "oklch(95.00% 0.04315 230.63)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-progress-bg": {
+        "role": "neutral",
+        "displayName": "Workspace Status Progress Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00600 223.46)",
+          "oklch(26.43% 0.00600 223.46)",
+          "oklch(37.86% 0.00600 223.46)",
+          "oklch(49.29% 0.00600 223.46)",
+          "oklch(60.71% 0.00600 223.46)",
+          "oklch(72.14% 0.00600 223.46)",
+          "oklch(83.57% 0.00600 223.46)",
+          "oklch(95.00% 0.00600 223.46)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-withdrawn": {
+        "role": "neutral",
+        "displayName": "Workspace Status Withdrawn",
+        "tonalRamp": [
+          "oklch(15.00% 0.00918 139.44)",
+          "oklch(26.43% 0.00918 139.44)",
+          "oklch(37.86% 0.00918 139.44)",
+          "oklch(49.29% 0.00918 139.44)",
+          "oklch(60.71% 0.00918 139.44)",
+          "oklch(72.14% 0.00918 139.44)",
+          "oklch(83.57% 0.00918 139.44)",
+          "oklch(95.00% 0.00918 139.44)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-status-withdrawn-bg": {
+        "role": "neutral",
+        "displayName": "Workspace Status Withdrawn Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00411 121.56)",
+          "oklch(26.43% 0.00411 121.56)",
+          "oklch(37.86% 0.00411 121.56)",
+          "oklch(49.29% 0.00411 121.56)",
+          "oklch(60.71% 0.00411 121.56)",
+          "oklch(72.14% 0.00411 121.56)",
+          "oklch(83.57% 0.00411 121.56)",
+          "oklch(95.00% 0.00411 121.56)"
+        ],
+        "source": "vetra/static/workspace.css"
+      },
+      "landing-paper": {
+        "role": "neutral",
+        "displayName": "Landing Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00284 128.49)",
+          "oklch(26.43% 0.00284 128.49)",
+          "oklch(37.86% 0.00284 128.49)",
+          "oklch(49.29% 0.00284 128.49)",
+          "oklch(60.71% 0.00284 128.49)",
+          "oklch(72.14% 0.00284 128.49)",
+          "oklch(83.57% 0.00284 128.49)",
+          "oklch(95.00% 0.00284 128.49)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--paper"
+      },
+      "landing-surface": {
+        "role": "neutral",
+        "displayName": "Landing Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--white"
+      },
+      "landing-ink": {
+        "role": "neutral",
+        "displayName": "Landing Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.02178 176.05)",
+          "oklch(26.43% 0.02178 176.05)",
+          "oklch(37.86% 0.02178 176.05)",
+          "oklch(49.29% 0.02178 176.05)",
+          "oklch(60.71% 0.02178 176.05)",
+          "oklch(72.14% 0.02178 176.05)",
+          "oklch(83.57% 0.02178 176.05)",
+          "oklch(95.00% 0.02178 176.05)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--ink"
+      },
+      "landing-forest": {
+        "role": "primary",
+        "displayName": "Landing Forest",
+        "tonalRamp": [
+          "oklch(15.00% 0.06467 167.31)",
+          "oklch(26.43% 0.06467 167.31)",
+          "oklch(37.86% 0.06467 167.31)",
+          "oklch(49.29% 0.06467 167.31)",
+          "oklch(60.71% 0.06467 167.31)",
+          "oklch(72.14% 0.06467 167.31)",
+          "oklch(83.57% 0.06467 167.31)",
+          "oklch(95.00% 0.06467 167.31)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--forest"
+      },
+      "landing-forest-hover": {
+        "role": "primary",
+        "displayName": "Landing Forest Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.05583 167.20)",
+          "oklch(26.43% 0.05583 167.20)",
+          "oklch(37.86% 0.05583 167.20)",
+          "oklch(49.29% 0.05583 167.20)",
+          "oklch(60.71% 0.05583 167.20)",
+          "oklch(72.14% 0.05583 167.20)",
+          "oklch(83.57% 0.05583 167.20)",
+          "oklch(95.00% 0.05583 167.20)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--forest-hover"
+      },
+      "landing-muted": {
+        "role": "neutral",
+        "displayName": "Landing Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.01960 167.83)",
+          "oklch(26.43% 0.01960 167.83)",
+          "oklch(37.86% 0.01960 167.83)",
+          "oklch(49.29% 0.01960 167.83)",
+          "oklch(60.71% 0.01960 167.83)",
+          "oklch(72.14% 0.01960 167.83)",
+          "oklch(83.57% 0.01960 167.83)",
+          "oklch(95.00% 0.01960 167.83)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--muted"
+      },
+      "landing-line": {
+        "role": "neutral",
+        "displayName": "Landing Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01031 145.49)",
+          "oklch(26.43% 0.01031 145.49)",
+          "oklch(37.86% 0.01031 145.49)",
+          "oklch(49.29% 0.01031 145.49)",
+          "oklch(60.71% 0.01031 145.49)",
+          "oklch(72.14% 0.01031 145.49)",
+          "oklch(83.57% 0.01031 145.49)",
+          "oklch(95.00% 0.01031 145.49)"
+        ],
+        "source": "vetra/static/landing.css",
+        "cssVariable": "--line"
+      },
+      "landing-status-review": {
+        "role": "neutral",
+        "displayName": "Landing Status Review",
+        "tonalRamp": [
+          "oklch(15.00% 0.08612 70.16)",
+          "oklch(26.43% 0.08612 70.16)",
+          "oklch(37.86% 0.08612 70.16)",
+          "oklch(49.29% 0.08612 70.16)",
+          "oklch(60.71% 0.08612 70.16)",
+          "oklch(72.14% 0.08612 70.16)",
+          "oklch(83.57% 0.08612 70.16)",
+          "oklch(95.00% 0.08612 70.16)"
+        ],
+        "source": "vetra/static/landing.css"
+      },
+      "landing-status-review-bg": {
+        "role": "neutral",
+        "displayName": "Landing Status Review Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.01985 77.32)",
+          "oklch(26.43% 0.01985 77.32)",
+          "oklch(37.86% 0.01985 77.32)",
+          "oklch(49.29% 0.01985 77.32)",
+          "oklch(60.71% 0.01985 77.32)",
+          "oklch(72.14% 0.01985 77.32)",
+          "oklch(83.57% 0.01985 77.32)",
+          "oklch(95.00% 0.01985 77.32)"
+        ],
+        "source": "vetra/static/landing.css"
+      },
+      "landing-status-neutral": {
+        "role": "neutral",
+        "displayName": "Landing Status Neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.02335 159.06)",
+          "oklch(26.43% 0.02335 159.06)",
+          "oklch(37.86% 0.02335 159.06)",
+          "oklch(49.29% 0.02335 159.06)",
+          "oklch(60.71% 0.02335 159.06)",
+          "oklch(72.14% 0.02335 159.06)",
+          "oklch(83.57% 0.02335 159.06)",
+          "oklch(95.00% 0.02335 159.06)"
+        ],
+        "source": "vetra/static/landing.css"
+      },
+      "landing-status-neutral-bg": {
+        "role": "neutral",
+        "displayName": "Landing Status Neutral Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00618 137.77)",
+          "oklch(26.43% 0.00618 137.77)",
+          "oklch(37.86% 0.00618 137.77)",
+          "oklch(49.29% 0.00618 137.77)",
+          "oklch(60.71% 0.00618 137.77)",
+          "oklch(72.14% 0.00618 137.77)",
+          "oklch(83.57% 0.00618 137.77)",
+          "oklch(95.00% 0.00618 137.77)"
+        ],
+        "source": "vetra/static/landing.css"
+      },
+      "operations-paper": {
+        "role": "neutral",
+        "displayName": "Operations Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00528 106.50)",
+          "oklch(26.43% 0.00528 106.50)",
+          "oklch(37.86% 0.00528 106.50)",
+          "oklch(49.29% 0.00528 106.50)",
+          "oklch(60.71% 0.00528 106.50)",
+          "oklch(72.14% 0.00528 106.50)",
+          "oklch(83.57% 0.00528 106.50)",
+          "oklch(95.00% 0.00528 106.50)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--paper"
+      },
+      "operations-surface": {
+        "role": "neutral",
+        "displayName": "Operations Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--surface"
+      },
+      "operations-ink": {
+        "role": "neutral",
+        "displayName": "Operations Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.04235 170.89)",
+          "oklch(26.43% 0.04235 170.89)",
+          "oklch(37.86% 0.04235 170.89)",
+          "oklch(49.29% 0.04235 170.89)",
+          "oklch(60.71% 0.04235 170.89)",
+          "oklch(72.14% 0.04235 170.89)",
+          "oklch(83.57% 0.04235 170.89)",
+          "oklch(95.00% 0.04235 170.89)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--ink"
+      },
+      "operations-muted": {
+        "role": "neutral",
+        "displayName": "Operations Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.02004 153.23)",
+          "oklch(26.43% 0.02004 153.23)",
+          "oklch(37.86% 0.02004 153.23)",
+          "oklch(49.29% 0.02004 153.23)",
+          "oklch(60.71% 0.02004 153.23)",
+          "oklch(72.14% 0.02004 153.23)",
+          "oklch(83.57% 0.02004 153.23)",
+          "oklch(95.00% 0.02004 153.23)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--muted"
+      },
+      "operations-forest": {
+        "role": "primary",
+        "displayName": "Operations Forest",
+        "tonalRamp": [
+          "oklch(15.00% 0.05282 165.02)",
+          "oklch(26.43% 0.05282 165.02)",
+          "oklch(37.86% 0.05282 165.02)",
+          "oklch(49.29% 0.05282 165.02)",
+          "oklch(60.71% 0.05282 165.02)",
+          "oklch(72.14% 0.05282 165.02)",
+          "oklch(83.57% 0.05282 165.02)",
+          "oklch(95.00% 0.05282 165.02)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--forest"
+      },
+      "operations-forest-hover": {
+        "role": "primary",
+        "displayName": "Operations Forest Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.04502 165.07)",
+          "oklch(26.43% 0.04502 165.07)",
+          "oklch(37.86% 0.04502 165.07)",
+          "oklch(49.29% 0.04502 165.07)",
+          "oklch(60.71% 0.04502 165.07)",
+          "oklch(72.14% 0.04502 165.07)",
+          "oklch(83.57% 0.04502 165.07)",
+          "oklch(95.00% 0.04502 165.07)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--forest-hover"
+      },
+      "operations-line": {
+        "role": "neutral",
+        "displayName": "Operations Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01249 137.79)",
+          "oklch(26.43% 0.01249 137.79)",
+          "oklch(37.86% 0.01249 137.79)",
+          "oklch(49.29% 0.01249 137.79)",
+          "oklch(60.71% 0.01249 137.79)",
+          "oklch(72.14% 0.01249 137.79)",
+          "oklch(83.57% 0.01249 137.79)",
+          "oklch(95.00% 0.01249 137.79)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--line"
+      },
+      "operations-tint": {
+        "role": "neutral",
+        "displayName": "Operations Tint",
+        "tonalRamp": [
+          "oklch(15.00% 0.01123 141.26)",
+          "oklch(26.43% 0.01123 141.26)",
+          "oklch(37.86% 0.01123 141.26)",
+          "oklch(49.29% 0.01123 141.26)",
+          "oklch(60.71% 0.01123 141.26)",
+          "oklch(72.14% 0.01123 141.26)",
+          "oklch(83.57% 0.01123 141.26)",
+          "oklch(95.00% 0.01123 141.26)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--tint"
+      },
+      "operations-amber": {
+        "role": "neutral",
+        "displayName": "Operations Amber",
+        "tonalRamp": [
+          "oklch(15.00% 0.07782 79.29)",
+          "oklch(26.43% 0.07782 79.29)",
+          "oklch(37.86% 0.07782 79.29)",
+          "oklch(49.29% 0.07782 79.29)",
+          "oklch(60.71% 0.07782 79.29)",
+          "oklch(72.14% 0.07782 79.29)",
+          "oklch(83.57% 0.07782 79.29)",
+          "oklch(95.00% 0.07782 79.29)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--amber"
+      },
+      "operations-amber-tint": {
+        "role": "neutral",
+        "displayName": "Operations Amber Tint",
+        "tonalRamp": [
+          "oklch(15.00% 0.01717 84.59)",
+          "oklch(26.43% 0.01717 84.59)",
+          "oklch(37.86% 0.01717 84.59)",
+          "oklch(49.29% 0.01717 84.59)",
+          "oklch(60.71% 0.01717 84.59)",
+          "oklch(72.14% 0.01717 84.59)",
+          "oklch(83.57% 0.01717 84.59)",
+          "oklch(95.00% 0.01717 84.59)"
+        ],
+        "source": "vetra/static/operations.css",
+        "cssVariable": "--amber-tint"
+      },
+      "operations-focus": {
+        "role": "neutral",
+        "displayName": "Operations Focus",
+        "tonalRamp": [
+          "oklch(15.00% 0.09321 139.95)",
+          "oklch(26.43% 0.09321 139.95)",
+          "oklch(37.86% 0.09321 139.95)",
+          "oklch(49.29% 0.09321 139.95)",
+          "oklch(60.71% 0.09321 139.95)",
+          "oklch(72.14% 0.09321 139.95)",
+          "oklch(83.57% 0.09321 139.95)",
+          "oklch(95.00% 0.09321 139.95)"
+        ],
+        "source": "vetra/static/operations.css"
+      }
+    },
+    "colorRampPolicy": {
+      "origin": "Synthesized OKLCH swatches for the design panel, derived from each documented color.",
+      "runtimeAuthority": false,
+      "note": "These eight-step ramps are visualization metadata, not source CSS tokens or a universal production palette."
+    },
+    "typographyMeta": {
+      "workspace-title": {
+        "displayName": "Workspace Title",
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-body": {
+        "displayName": "Workspace Body",
+        "source": "vetra/static/workspace.css"
+      },
+      "workspace-label": {
+        "displayName": "Workspace Label",
+        "source": "vetra/static/workspace.css"
+      },
+      "candidate-title": {
+        "displayName": "Candidate Title",
+        "source": "vetra/static/workspace.css"
+      },
+      "landing-display": {
+        "displayName": "Landing Display",
+        "source": "vetra/static/landing.css"
+      },
+      "landing-headline": {
+        "displayName": "Landing Headline",
+        "source": "vetra/static/landing.css"
+      },
+      "landing-body": {
+        "displayName": "Landing Body",
+        "source": "vetra/static/landing.css"
+      },
+      "operations-title": {
+        "displayName": "Operations Title",
+        "source": "vetra/static/operations.css"
+      },
+      "operations-body": {
+        "displayName": "Operations Body",
+        "source": "vetra/static/operations.css"
+      },
+      "account-title": {
+        "displayName": "Account Title",
+        "source": "vetra/static/operations.css"
+      }
+    },
+    "shadows": [
+      {
+        "name": "workspace-toast",
+        "value": "0 8px 28px #20272324",
+        "purpose": "Temporary feedback only.",
+        "source": "vetra/static/workspace.css"
+      }
+    ],
+    "motion": [
+      {
+        "name": "workspace-state",
+        "value": "150ms ease",
+        "purpose": "Navigation, button and field state transitions."
+      },
+      {
+        "name": "workspace-press",
+        "value": "100ms ease",
+        "purpose": "Button scale(.985) feedback."
+      },
+      {
+        "name": "landing-state",
+        "value": "160ms ease-out",
+        "purpose": "Public button/link color states."
+      },
+      {
+        "name": "landing-press",
+        "value": "100ms ease-out",
+        "purpose": "Button scale(.98) feedback."
+      },
+      {
+        "name": "landing-headline",
+        "value": "600ms cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "One headline settle animation."
+      },
+      {
+        "name": "landing-disclosure",
+        "value": "180ms ease-out",
+        "purpose": "FAQ icon rotation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "workspace-min-1600",
+        "value": "1600px",
+        "query": "(min-width: 1600px)",
+        "source": "vetra/static/workspace.css"
+      },
+      {
+        "name": "workspace-max-1300",
+        "value": "1300px",
+        "query": "(max-width: 1300px)",
+        "source": "vetra/static/workspace.css"
+      },
+      {
+        "name": "workspace-max-1080",
+        "value": "1080px",
+        "query": "(max-width: 1080px)",
+        "source": "vetra/static/workspace.css"
+      },
+      {
+        "name": "workspace-max-780",
+        "value": "780px",
+        "query": "(max-width: 780px)",
+        "source": "vetra/static/workspace.css"
+      },
+      {
+        "name": "workspace-max-390",
+        "value": "390px",
+        "query": "(max-width: 390px)",
+        "source": "vetra/static/workspace.css"
+      },
+      {
+        "name": "landing-min-1600",
+        "value": "1600px",
+        "query": "(min-width: 1600px)",
+        "source": "vetra/static/landing.css"
+      },
+      {
+        "name": "landing-max-1150",
+        "value": "1150px",
+        "query": "(max-width: 1150px)",
+        "source": "vetra/static/landing.css"
+      },
+      {
+        "name": "landing-max-900",
+        "value": "900px",
+        "query": "(max-width: 900px)",
+        "source": "vetra/static/landing.css"
+      },
+      {
+        "name": "landing-max-700",
+        "value": "700px",
+        "query": "(max-width: 700px)",
+        "source": "vetra/static/landing.css"
+      },
+      {
+        "name": "landing-max-380",
+        "value": "380px",
+        "query": "(max-width: 380px)",
+        "source": "vetra/static/landing.css"
+      },
+      {
+        "name": "operations-max-800",
+        "value": "800px",
+        "query": "(max-width: 800px)",
+        "source": "vetra/static/operations.css"
+      },
+      {
+        "name": "operations-max-560",
+        "value": "560px",
+        "query": "(max-width: 560px)",
+        "source": "vetra/static/operations.css"
+      }
+    ],
+    "sourceMap": {
+      "workspace": "vetra/static/workspace.css + vetra/templates/workspace.html + vetra/static/workspace.js",
+      "candidate": "vetra/static/workspace.css + vetra/templates/portal.html + vetra/static/portal.js",
+      "landing": "vetra/static/landing.css + vetra/templates/landing.html",
+      "operations": "vetra/static/operations.css + vetra/templates/pilot.html + vetra/static/operations.js",
+      "login": "vetra/static/operations.css + vetra/app.py::_LOGIN_PAGE"
+    }
+  },
+  "components": [
+    {
+      "name": "Workspace primary button",
+      "kind": "button",
+      "refersTo": "workspace-button-primary",
+      "description": "Native workspace action; specimen only, without API behavior.",
+      "html": "<button class=\"ds-ws-primary\" type=\"button\">Invite candidate</button>",
+      "css": ".ds-ws-primary{display:inline-flex;gap:8px;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border:1px solid #d5dbd0;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--font,Manrope,Arial,sans-serif);font-size:12px;font-weight:700;line-height:1.4;transition:background 150ms ease,border-color 150ms ease,transform 100ms ease;background:var(--teal,#245642);color:#fff;border-color:var(--teal,#245642);}.ds-ws-primary:hover{background:var(--teal-dark,#183e2f);border-color:var(--teal-dark,#183e2f);}.ds-ws-primary:focus-visible{outline:3px solid var(--focus,#426e53);outline-offset:3px;}.ds-ws-primary:active{transform:scale(.985)}.ds-ws-primary:disabled{opacity:.62;cursor:not-allowed;pointer-events:none}@media(prefers-reduced-motion:reduce){.ds-ws-primary{transition:none}}"
+    },
+    {
+      "name": "Workspace secondary button",
+      "kind": "button",
+      "refersTo": "workspace-button-secondary",
+      "description": "Native workspace action; specimen only, without API behavior.",
+      "html": "<button class=\"ds-ws-secondary\" type=\"button\">Export cases</button>",
+      "css": ".ds-ws-secondary{display:inline-flex;gap:8px;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border:1px solid #d5dbd0;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--font,Manrope,Arial,sans-serif);font-size:12px;font-weight:700;line-height:1.4;transition:background 150ms ease,border-color 150ms ease,transform 100ms ease;background:var(--white,#fff);color:var(--ink,#202723);}.ds-ws-secondary:hover{background:#eef2e9;border-color:#b8c5af;}.ds-ws-secondary:focus-visible{outline:3px solid var(--focus,#426e53);outline-offset:3px;}.ds-ws-secondary:active{transform:scale(.985)}.ds-ws-secondary:disabled{opacity:.62;cursor:not-allowed;pointer-events:none}@media(prefers-reduced-motion:reduce){.ds-ws-secondary{transition:none}}"
+    },
+    {
+      "name": "Workspace danger button",
+      "kind": "button",
+      "refersTo": "workspace-button-danger",
+      "description": "Native workspace action; specimen only, without API behavior.",
+      "html": "<button class=\"ds-ws-danger\" type=\"button\">Withdraw from verification</button>",
+      "css": ".ds-ws-danger{display:inline-flex;gap:8px;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border:1px solid #d5dbd0;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--font,Manrope,Arial,sans-serif);font-size:12px;font-weight:700;line-height:1.4;transition:background 150ms ease,border-color 150ms ease,transform 100ms ease;background:var(--white,#fff);color:var(--danger,#963f35);border-color:#ddc4bc;}.ds-ws-danger:hover{background:#fbf0ec;border-color:#c49589;}.ds-ws-danger:focus-visible{outline:3px solid var(--focus,#426e53);outline-offset:3px;}.ds-ws-danger:active{transform:scale(.985)}.ds-ws-danger:disabled{opacity:.62;cursor:not-allowed;pointer-events:none}@media(prefers-reduced-motion:reduce){.ds-ws-danger{transition:none}}"
+    },
+    {
+      "name": "Workspace text field",
+      "kind": "input",
+      "refersTo": "workspace-input",
+      "description": "Labeled working field with hover, invalid and disabled treatment.",
+      "html": "<label class=\"ds-field\" for=\"ds-work-email\">Work email<input id=\"ds-work-email\" type=\"email\" placeholder=\"you@company.com\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;font-family:var(--font,Manrope,Arial,sans-serif);font-size:12px;font-weight:700;color:var(--ink,#202723)}.ds-field input{width:100%;min-height:44px;padding:12px;border:1px solid #cfd6c8;border-radius:8px;background:#fff;color:var(--ink,#202723);font:400 13px var(--font,Manrope,Arial,sans-serif);transition:border-color 150ms ease}.ds-field input:hover{border-color:#97ab8b}.ds-field input:focus-visible{outline:3px solid var(--focus,#426e53);outline-offset:3px;}.ds-field input::placeholder{color:#72796d;opacity:1}.ds-field input[aria-invalid=true]{border-color:var(--danger,#963f35)}.ds-field input:disabled{background:#f1f3ec;color:#626960;cursor:not-allowed}@media(max-width:780px){.ds-field input{font-size:16px}}@media(prefers-reduced-motion:reduce){.ds-field input{transition:none}}"
+    },
+    {
+      "name": "Workspace active navigation",
+      "kind": "nav",
+      "refersTo": "workspace-navigation-active",
+      "description": "Dark rail item; route action is illustrative.",
+      "html": "<nav class=\"ds-rail\" aria-label=\"Workspace specimen\"><a class=\"ds-nav\" href=\"#\" aria-current=\"page\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3\"/><path d=\"M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5.65\"/></svg>Candidates</a></nav>",
+      "css": ".ds-rail{background:#1c3027;padding:18px;font-family:var(--font,Manrope,Arial,sans-serif)}.ds-nav{display:flex;align-items:center;gap:11px;min-height:44px;padding:12px 11px;border-radius:8px;font-size:12px;font-weight:650;text-decoration:none;background:#385543;color:#fff;transition:background 150ms ease,color 150ms ease}.ds-nav svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.ds-nav:hover{background:#2a4133}.ds-nav:focus-visible{outline:3px solid var(--focus,#426e53);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-nav{transition:none}}"
+    },
+    {
+      "name": "Workspace review badge",
+      "kind": "chip",
+      "refersTo": "workspace-status-review",
+      "description": "Noninteractive status; its dot is decorative.",
+      "html": "<span class=\"ds-review\">Needs review</span>",
+      "css": ".ds-review{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border-radius:5px;background:var(--amber-bg,#fbf3df);color:#805818;font-family:var(--font,Manrope,Arial,sans-serif);font-size:12px;font-weight:700;white-space:nowrap}.ds-review::before{content:\"\";width:5px;height:5px;border-radius:50%;background:currentColor}"
+    },
+    {
+      "name": "Workspace panel",
+      "kind": "card",
+      "refersTo": "workspace-panel",
+      "description": "Flat working container with a heading inset.",
+      "html": "<section class=\"ds-panel\" aria-labelledby=\"ds-panel-title\"><div class=\"ds-panel-head\"><h2 id=\"ds-panel-title\">Candidate evidence</h2><p>Sources, reviewer notes and next steps.</p></div></section>",
+      "css": ".ds-panel{background:var(--white,#fff);border:1px solid var(--line,#e3e5de);border-radius:var(--radius,14px);overflow:hidden;font-family:var(--font,Manrope,Arial,sans-serif);color:var(--ink,#202723)}.ds-panel-head{padding:23px 24px}.ds-panel h2{margin:0;font-size:16px;line-height:1.4;letter-spacing:-.025em}.ds-panel p{margin:5px 0 0;color:var(--muted,#626960);font-size:12px;line-height:1.6}"
+    },
+    {
+      "name": "Landing primary button",
+      "kind": "button",
+      "refersTo": "landing-button-primary",
+      "description": "Public page action; no destination behavior in this specimen.",
+      "html": "<a class=\"ds-landing-primary\" href=\"#\">Explore the workspace</a>",
+      "css": ".ds-landing-primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:52px;padding:14px 22px;border:1px solid transparent;border-radius:8px;font-family:Manrope,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:650;line-height:1.4;text-decoration:none;background:var(--forest,#174d3b);color:#fff;transition:color 160ms ease-out,background-color 160ms ease-out,border-color 160ms ease-out,transform 100ms ease-out}.ds-landing-primary:hover{background:var(--forest-hover,#103d2e);}.ds-landing-primary:focus-visible{outline:3px solid var(--forest,#174d3b);outline-offset:5px}.ds-landing-primary:active{transform:scale(.98)}@media(prefers-reduced-motion:reduce){.ds-landing-primary{transition:none}.ds-landing-primary:active{transform:none}}"
+    },
+    {
+      "name": "Landing outline button",
+      "kind": "button",
+      "refersTo": "landing-button-outline",
+      "description": "Public page action; no destination behavior in this specimen.",
+      "html": "<a class=\"ds-landing-outline\" href=\"#\">Explore the workspace</a>",
+      "css": ".ds-landing-outline{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:52px;padding:14px 22px;border:1px solid transparent;border-radius:8px;font-family:Manrope,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:650;line-height:1.4;text-decoration:none;background:transparent;color:var(--ink,#182723);border-color:#bec9c1;transition:color 160ms ease-out,background-color 160ms ease-out,border-color 160ms ease-out,transform 100ms ease-out}.ds-landing-outline:hover{background:#eef2ec;border-color:var(--forest,#174d3b);}.ds-landing-outline:focus-visible{outline:3px solid var(--forest,#174d3b);outline-offset:5px}.ds-landing-outline:active{transform:scale(.98)}@media(prefers-reduced-motion:reduce){.ds-landing-outline{transition:none}.ds-landing-outline:active{transform:none}}"
+    },
+    {
+      "name": "Operations primary button",
+      "kind": "button",
+      "refersTo": "operations-button-primary",
+      "description": "Native form action with busy and press feedback.",
+      "html": "<button class=\"ds-ops-button\" type=\"button\">Save measurement</button>",
+      "css": ".ds-ops-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border:1px solid transparent;border-radius:7px;background:var(--forest,#244b3b);color:#fff;font-family:Manrope,system-ui,sans-serif;font-size:13px;font-weight:650;line-height:1.5;cursor:pointer}.ds-ops-button:hover{background:var(--forest-hover,#19392c)}.ds-ops-button:focus-visible{outline:3px solid #719e67;outline-offset:3px}.ds-ops-button:active{transform:translateY(1px)}.ds-ops-button:disabled{opacity:.65;cursor:wait}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A clear case file",
+    "overview": "Warm paper, graphite text and measured forest accents give the interface the character of a well-kept working file. Manrope, restrained borders and generous grouping keep information approachable at working density. This direction was agent-selected within the authorized redesign; these records extract the implementation, rather than claiming a user-selected concept card.\n\nThe system adjusts density and expression to each route. Surface strategy and visitor modes live in the [surface briefs](.impeccable/surfaces/). Product truth stays in [PRODUCT.md](PRODUCT.md); source use and process limits are recorded in [DESIGN-DELIVERY.md](docs/design/DESIGN-DELIVERY.md).",
+    "keyCharacteristics": [
+      "Warm light surfaces, graphite text and forest actions.",
+      "Self-hosted Manrope throughout.",
+      "Flat bordered containers and contextual tinted groups.",
+      "Textual statuses, native controls and visible keyboard focus.",
+      "Separate palettes and responsive rules for working, marketing and account surfaces."
+    ],
+    "rules": [
+      {
+        "name": "The Surface Palette Rule",
+        "body": "Use the palette from the stylesheet that renders the surface; neighboring routes and Figma reference tokens do not silently redefine production values.",
+        "section": "colors"
+      },
+      {
+        "name": "The Working Text Rule",
+        "body": "Preserve readable working text and mobile input sizes; do not use the miniature illustration scale for product controls.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Depth Rule",
+        "body": "Use borders and tonal grouping for ordinary content; keep toast elevation tied to temporary feedback.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use each surface's source tokens and preserve the final dark-rail overrides.",
+      "**Do** use Manrope, visible keyboard focus, labeled native controls and implemented mobile input sizes.",
+      "**Do** combine status color with text and distinguish human review from provider results.",
+      "**Do** provide useful loading, first-run, filtered-empty, save and error states.",
+      "**Do** label illustrative records as fictional and use tenant API data for working counts."
+    ],
+    "donts": [
+      "**Don't** restore superseded blue-gray tokens, serif marketing type or paid-pilot access messaging as the current system.",
+      "**Don't** promote illustration text sizes, static controls or sample records to working product defaults.",
+      "**Don't** invent provider coverage, certificates, customer proof, suitability scores or performance metrics.",
+      "**Don't** hide approval, correction, withdrawal or staff authentication to simplify a screen.",
+      "**Don't** claim universal breakpoints, radii, control heights, contrast or motion behavior."
+    ]
+  }
+}

@@ -1,11 +1,13 @@
-# Vetra
+# Verisento
 
-Working brand: Vetra. Candidate-controlled verification for HR teams. Name, domain, and trademark availability remain to be checked before public commercial launch.
+Approved brand: Verisento. Descriptor: identity & background verification. Tagline: Confidence starts with proof. Domain registration and formal trademark clearance are pending.
 
-First buyer: recruiting and people operations teams at growing EU/UK organizations. First outcome: invite a candidate, capture explicit approval, collect scoped claims, connect a hosted identity provider, and record a human evidence review. Employment, education, criminal records, and right-to-work attestations require appropriate providers or documented sources; username matches are not identity evidence.
+Current product: candidate-controlled hiring verification for HR and recruitment teams. Initial market focus is UK recruitment agencies, with additional countries requiring source coverage, legal/privacy review, and appropriate provider contracts. Early access is free; no payment is required. Live billing is disabled through VETRA_BILLING_ENABLED=false.
 
-The implementation is a local pilot with fictional seeded records, persistent SQLite, tenant-scoped authorization, owner/reviewer/viewer staff roles, a candidate portal, audit history, and a Stripe Identity integration that must be configured. It has no automatic suitability score or adverse hiring decision. It is not certified or ready for unrestricted enterprise production.
+Primary HR outcome: invite a candidate, obtain explicit approval, collect scoped statements, review documented evidence, start an activated hosted identity check, and resolve corrections. Primary candidate outcome: understand the requested scope, approve or decline, submit information, request a correction, and withdraw.
 
-Maigret remains an attributed MIT licensed research engine. Its CLI and package are retained for compatibility, separate from the HR app. The Vetra app is launched with `python -m vetra` and uses Flask without loading the OSINT engine.
+The live app runs on Vercel with same-origin rewrites to Railway, a persistent SQLite volume, tenant-scoped authorization, owner/reviewer/viewer access, secure staff sessions, CSRF, audit history and signed Stripe Identity webhooks. Live identity, email and payment provider accounts have not been activated. Employment and education checks are documented manual source reviews, not provider attestations. Criminal, sanctions and right-to-work providers are not connected. No suitability score, automated hiring decision, certification or invented enterprise readiness claim is allowed. Customer outreach is paused.
 
-Visual direction: a quiet, precise HR workspace used throughout the workday. Light neutral surfaces, a persistent navigation rail, teal actions, clear table hierarchy, evidence outcomes separated from provider attestations, and an accessible mobile candidate portal. No invented customer claims or compliance badges. A demonstration is always labeled.
+Every demo or illustrative record is visibly fictional. Real counts come only from the tenant's API; public preview counts are explicitly examples. Authentication and consent stay required while payment is disabled. Maigret remains an attributed MIT research engine, separate from hiring. Internal vetra package/environment names and URLs stay compatible until a deliberate infrastructure migration.
+
+Design work uses the project skill routing and source provenance in AGENTS.md and docs/design. Operate surfaces prioritize scanability, accessible keyboard/mobile behavior, meaningful states and the next action; marketing demonstrates the actual workflow and honest activation status. Shared visual direction: warm-white, graphite, forest green, self-hosted Manrope, restrained borders and motion, no ungrounded visual gimmicks.
