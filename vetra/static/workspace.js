@@ -170,7 +170,7 @@ async function route() {
   const [view,id]=hash.split('/');
   const titles={overview:'Overview',candidates:'Candidates',review:'Review queue',audit:'Audit trail',settings:'Workspace settings',new:'Invite candidate',candidate:'Candidate case'};
   document.getElementById('breadcrumb').textContent=titles[view] || 'Overview';
-  document.title=(titles[view] || 'Overview') + ' · Vetra';
+  document.title=(titles[view] || 'Overview') + ' · Verisento';
   root.setAttribute('aria-busy','true');
   document.querySelectorAll('.nav-link').forEach(link=>{const active=link.dataset.view===(['new','candidate'].includes(view)?'candidates':view);link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
   root.innerHTML='<div class="loading-state" role="status">Loading…</div>';

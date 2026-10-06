@@ -87,7 +87,7 @@ class StripeIdentityProvider:
                 "Authorization": "Bearer " + self._secret_key,
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Idempotency-Key": idempotency_key,
-                "User-Agent": "Vetra-Identity/0.1",
+                "User-Agent": "Verisento-Identity/0.1",
             },
             method="POST",
         )

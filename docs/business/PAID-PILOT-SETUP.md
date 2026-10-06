@@ -26,7 +26,7 @@ Initial sales segment: UK recruitment agencies. Global architecture means countr
 
 ## Employment and education procedure
 
-Candidate supplies dates, organization/institution, role/qualification and an authorized verifier reference. Obtain approval before contact. Independently validate the official organization/institution channel; do not rely solely on candidate-supplied contact details. Use minimal questions, record response date, source and reviewer, distinguish verified source responses from unverified candidate claims, and offer a correction route. Vetra labels these as **manual reviews**, never identity-provider attestations. For scaled coverage, contract credential providers after country, institution coverage and data-processing review. Criminal records and right-to-work checks remain outside this pilot; UK DBS checks involve eligibility and a qualified route.
+Candidate supplies dates, organization/institution, role/qualification and an authorized verifier reference. Obtain approval before contact. Independently validate the official organization/institution channel; do not rely solely on candidate-supplied contact details. Use minimal questions, record response date, source and reviewer, distinguish verified source responses from unverified candidate claims, and offer a correction route. Verisento labels these as **manual reviews**, never identity-provider attestations. For scaled coverage, contract credential providers after country, institution coverage and data-processing review. Criminal records and right-to-work checks remain outside this pilot; UK DBS checks involve eligibility and a qualified route.
 
 ## Pilot measurement and future recruitment
 

@@ -1,4 +1,4 @@
-# Vetra implementation handoff
+# Verisento implementation handoff
 
 The current deliverable is a working local pilot and a foundation for a candidate verification SaaS. It is not an activated screening service or a certified enterprise deployment.
 
@@ -6,7 +6,7 @@ The current deliverable is a working local pilot and a foundation for a candidat
 
 Start the app with the README commands. The HR workspace is at / and the marketing page at /about. Create an invitation, open the private candidate link in another browser session, approve the scope, submit a statement, review it in HR, request a correction, resolve it, and withdraw. Only use sample data in demo mode.
 
-The new app runs independently of the Maigret research engine. Public username discovery and AI profiling are not present in the HR product. Maigret's module and command names remain compatible with upstream; the customer-facing name and the new service command are Vetra.
+The new app runs independently of the Maigret research engine. Public username discovery and AI profiling are not present in the HR product. Maigret's module and command names remain compatible with upstream; the customer-facing name and the new service command are Verisento.
 
 ## Required activation inputs
 

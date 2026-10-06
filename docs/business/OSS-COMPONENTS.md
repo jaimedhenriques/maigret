@@ -6,7 +6,7 @@ regulated identity or employment-screening service is available from any one
 repository. Code, trained models, datasets, trademarks, and hosted API rights
 must each be checked separately.
 
-## Code copied into Vetra
+## Code copied into Verisento
 
 The Python implementation from
 [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks) is
@@ -25,7 +25,7 @@ declares MIT in its `pyproject.toml`.
   vendored files using the project virtual environment. Application-level
   integration tests are separate from this source verification.
 
-Vetra actively imports the copied verifier in `vetra/workflow_ingress.py` for
+Verisento actively imports the copied verifier in `vetra/workflow_ingress.py` for
 `POST /api/webhooks/workflow`. The endpoint authenticates partner notifications,
 binds the tenant/candidate/check references to recorded checks, persists delivery
 IDs for deduplication, and gates processing on candidate consent. Notifications
@@ -90,7 +90,7 @@ binaries or models without explicit, suitable terms. No source copied.
 
 ## Integration order for a hiring product
 
-1. Keep candidate consent, correction, withdrawal and audit workflows in Vetra.
+1. Keep candidate consent, correction, withdrawal and audit workflows in Verisento.
    Activate a contracted identity provider through hosted capture and verified
    events; retain provider references rather than unnecessary raw ID images.
 2. Use the vendored webhook component only where the provider supports the

@@ -1,4 +1,4 @@
-"""Run the Vetra pilot with `python -m vetra`."""
+"""Run the Verisento pilot with `python -m vetra`."""
 
 import argparse
 import logging
@@ -16,7 +16,7 @@ class _RedactInvitationTokens(logging.Filter):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Vetra employment verification pilot")
+    parser = argparse.ArgumentParser(description="Verisento employment verification pilot")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8000)
     args = parser.parse_args()

@@ -1,12 +1,12 @@
-# Vetra sales kit
+# Verisento sales kit
 
-These are editable drafts for founder-led discovery and paid pilots. No messages have been sent. Vetra is a working name pending brand clearance. Confirm one launch country, supported check scope and the operational gates in [the launch plan](LAUNCH-PLAN.md) before promising real verification.
+These are editable drafts for founder-led discovery and paid pilots. No messages have been sent. Verisento is a working name pending brand clearance. Confirm one launch country, supported check scope and the operational gates in [the launch plan](LAUNCH-PLAN.md) before promising real verification.
 
 ## Positioning
 
-**One sentence:** Vetra helps hiring teams collect candidate-approved information, review sourced evidence and resolve discrepancies in one clear workflow.
+**One sentence:** Verisento helps hiring teams collect candidate-approved information, review sourced evidence and resolve discrepancies in one clear workflow.
 
-**Buyer pitch:** “Your team should know which checks are waiting on a candidate, a source or a reviewer. Vetra makes that visible and gives candidates a clear place to participate and correct information. We are inviting three teams to help shape a scoped paid pilot.”
+**Buyer pitch:** “Your team should know which checks are waiting on a candidate, a source or a reviewer. Verisento makes that visible and gives candidates a clear place to participate and correct information. We are inviting three teams to help shape a scoped paid pilot.”
 
 **Current status:** “The workspace and candidate portal work. An identity-provider adapter is implemented and requires activation. Employment, education and other background-data integrations need contracted sources. This is a pilot foundation, and we will state exactly which checks your pilot includes.”
 
@@ -56,7 +56,7 @@ End with a concrete pilot outcome: measure coordinator minutes, candidate submis
 >
 > **Success measures:** agreed baseline coordinator minutes, candidate submission within three business days, completed supported evidence checks, unresolved discrepancies, support effort and willingness to renew. Targets are testable pilot assumptions, not guarantees.
 >
-> **Responsibilities:** the employer defines eligible role scope and makes employment decisions; Vetra operates the agreed workflow; the contracted provider performs its specified checks. Agree support contacts, candidate corrections, data handling and termination before launch.
+> **Responsibilities:** the employer defines eligible role scope and makes employment decisions; Verisento operates the agreed workflow; the contracted provider performs its specified checks. Agree support contacts, candidate corrections, data handling and termination before launch.
 >
 > **End of pilot:** factual results report, renewal decision and agreed export/deletion process. No named testimonial or case study without explicit permission.
 
@@ -66,7 +66,7 @@ The template is commercial drafting material. Attach the actual customer agreeme
 
 | Buyer question | Suggested answer |
 |---|---|
-| Why not stay with our screening vendor? | Keep the provider if it supplies the checks you need. Test whether Vetra reduces coordination work and gives candidates a clearer process. Integrations must be confirmed before contracting. |
+| Why not stay with our screening vendor? | Keep the provider if it supplies the checks you need. Test whether Verisento reduces coordination work and gives candidates a clearer process. Integrations must be confirmed before contracting. |
 | Does this verify someone's identity? | With the identity adapter activated, a supported provider performs the identity check and we record its outcome. A candidate statement or public profile match does not prove identity. |
 | Can you check criminal history or right to work today? | Those providers are not connected. We can scope a future integration; the pilot agreement includes only activated checks. |
 | Is this compliant? | Compliance depends on country, role, check scope, contracts and operation. We document the supported process and evidence for your privacy/procurement review. We do not claim a blanket certification. |
@@ -80,7 +80,7 @@ The template is commercial drafting material. Attach the actual customer agreeme
 
 > Hi [name],
 >
-> I am building Vetra for hiring teams that spend too much time chasing identity and credential information across email and spreadsheets. Candidates see the requested scope, submit information and can correct discrepancies; HR gets a clear case history.
+> I am building Verisento for hiring teams that spend too much time chasing identity and credential information across email and spreadsheets. Candidates see the requested scope, submit information and can correct discrepancies; HR gets a clear case history.
 >
 > We are looking for three design partners for a 30-day paid pilot in [country]. The starting hypothesis is €299 for up to 20 workflow cases, with any contracted verification fees quoted separately.
 >
@@ -92,11 +92,11 @@ The template is commercial drafting material. Attach the actual customer agreeme
 
 > Hi [name],
 >
-> Following up on Vetra. The pilot measures coordinator time, candidate completion and how discrepancies are resolved. If another colleague owns verification operations, I would appreciate being pointed to the right person.
+> Following up on Verisento. The pilot measures coordinator time, candidate completion and how discrepancies are resolved. If another colleague owns verification operations, I would appreciate being pointed to the right person.
 >
 > [Founder name]
 
-**After a demonstration — subject: Proposed Vetra pilot scope for [company]**
+**After a demonstration — subject: Proposed Verisento pilot scope for [company]**
 
 > Hi [name],
 >

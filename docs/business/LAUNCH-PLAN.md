@@ -1,12 +1,12 @@
-# Vetra launch plan
+# Verisento launch plan
 
-Vetra is the working name for a candidate verification workflow sold to HR teams. The promise is **“Clear evidence. A fairer hiring process.”** Clear the name, domain and trademarks in the launch market before paying for branding or advertising. This plan assumes an initial UK or EU market; choose one country before accepting real screening work.
+Verisento is the working name for a candidate verification workflow sold to HR teams. The promise is **“Clear evidence. A fairer hiring process.”** Clear the name, domain and trademarks in the launch market before paying for branding or advertising. This plan assumes an initial UK or EU market; choose one country before accepting real screening work.
 
 ## Product and market position
 
 Sell a candidate-controlled hiring verification service: an employer requests specific checks, the candidate sees the scope, information is collected, source evidence is reviewed, and discrepancies can be corrected. HR receives a factual record with evidence provenance and a human review history.
 
-Identity proofing, employment background checks and regulated customer KYC are different products. Maigret discovers public accounts associated with usernames; that does not prove account ownership or a person's identity. Identity proofing can establish an identity-provider outcome. Employment screening needs authoritative employment, education or other eligible sources. An AML/KYC program additionally requires the applicable customer due diligence, screening, ongoing monitoring and operating procedures. Vetra must sell only the scope it can substantiate.
+Identity proofing, employment background checks and regulated customer KYC are different products. Maigret discovers public accounts associated with usernames; that does not prove account ownership or a person's identity. Identity proofing can establish an identity-provider outcome. Employment screening needs authoritative employment, education or other eligible sources. An AML/KYC program additionally requires the applicable customer due diligence, screening, ongoing monitoring and operating procedures. Verisento must sell only the scope it can substantiate.
 
 Compete first on transparent candidate experience, clear check status and less HR administration. Do not compete with established screening networks by claiming comparable data coverage, turnaround time or accuracy before measuring them. Keep public username discovery, personal social-media profiling, protected-trait inference and automated hiring scores outside the HR product.
 
@@ -31,7 +31,7 @@ Start with three design partners. Use warm introductions and founder-led discove
 | Criminal history, sanctions, credit and right to work | No connected providers | Add only when the market, eligibility, contracted source and required process are defined |
 | Enterprise operations | Single-instance SQLite pilot and security foundations | Add production storage, workforce identity, durable jobs and validated operations before enterprise sales |
 
-Buy document authenticity, liveness, authoritative registry coverage and country-specific screening access from established providers. Build case orchestration, scope management, status explanations, source provenance, corrections, audit, reporting and ATS workflows. Prefer hosted provider collection so Vetra does not need to store identity documents or biometric media.
+Buy document authenticity, liveness, authoritative registry coverage and country-specific screening access from established providers. Build case orchestration, scope management, status explanations, source provenance, corrections, audit, reporting and ATS workflows. Prefer hosted provider collection so Verisento does not need to store identity documents or biometric media.
 
 Evaluate providers on eligible use cases/countries, evidence quality, candidate dispute support, data hosting/transfers, retention and deletion, webhook reliability, service terms, minimum spend and per-check charges. Request a sandbox and a contract. A provider's identity verification result must not be described as a UK statutory right-to-work check without the required supported process. Reusable open-source software is evaluated separately in [OSS components](OSS-COMPONENTS.md).
 

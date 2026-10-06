@@ -16,3 +16,6 @@
 @media print{.site-header,.hero-actions,.hero-caption,.product-figure,.principles,.workflow-section,.approach-section,.pricing-section,.faq-section,.closing-section,.site-footer,.hero,.pilot-copy .button,.pilot-demo-note{display:none}.pilot-section{background:#fff;border:0;padding:20px 0}.container{width:100%;max-width:none}.pilot-inner{display:block}.pilot-copy{margin-bottom:30px}.pilot-copy h2{font-size:30px}.pilot-plan li{break-inside:avoid}.pilot-plan{margin-top:25px}.pilot-copy>p:not(.eyebrow){max-width:none;font-size:12px}}
 
 .cta-icon{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Keep the longer wordmark and workspace action legible on small screens. */
+@media(max-width:650px){.header-inner .brand{font-size:23px;gap:6px}.header-inner>.button{font-size:10px;padding-inline:9px;gap:6px}}

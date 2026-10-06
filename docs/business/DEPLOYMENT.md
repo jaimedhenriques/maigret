@@ -1,4 +1,4 @@
-# Hosted Vetra pilot
+# Hosted Verisento pilot
 
 Frontend: https://vetra-hr.vercel.app
 Staff workspace: https://vetra-hr.vercel.app/app

@@ -424,7 +424,7 @@ def create_app(config: dict | None = None) -> Flask:
     def verification_return():
         return render_template_string(
             "<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'>"
-            "<title>Vetra · verification submitted</title><body><main><h1>Thank you</h1>"
+            "<title>Verisento · verification submitted</title><body><main><h1>Thank you</h1>"
             "<p>Your identity session has been submitted. Your employer will receive the provider's result "
             "when it is available. You can return to the invitation to view your case or request a correction.</p>"
             "</main></body></html>"
@@ -935,15 +935,15 @@ def _safe_csv_cell(value):
 
 _LOGIN_PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sign in · Vetra</title><style>
+<title>Sign in · Verisento</title><style>
 body{margin:0;font:16px system-ui;color:#182a30;background:#f2f5f3;display:grid;place-items:center;min-height:100vh}
 main{background:white;padding:40px;border-radius:20px;max-width:360px;width:80%;box-shadow:0 8px 40px #102a1010}
 label{display:block;margin-top:20px}input,button{box-sizing:border-box;width:100%;padding:13px;border-radius:8px;border:1px solid #b6c4c0;margin-top:7px;font:inherit}
 button{background:#153d32;color:white;margin-top:24px;cursor:pointer}a{color:#153d32}.error{color:#ad3228}
-</style></head><body><main><h1>Welcome to Vetra</h1><p>Sign in to your verification workspace.</p>
+</style></head><body><main><h1>Welcome to Verisento</h1><p>Sign in to your verification workspace.</p>
 {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
 <form method="post" action="/login"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
 <label for="email">Work email</label><input type="email" id="email" name="email" autocomplete="username" required maxlength="254">
 <label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" required>
-<button type="submit">Sign in</button></form><p><a href="/forgot-password">Forgot password?</a> · <a href="/about">About Vetra</a></p>
+<button type="submit">Sign in</button></form><p><a href="/forgot-password">Forgot password?</a> · <a href="/about">About Verisento</a></p>
 {% if demo %}<p><a href="/">Open fictional demo</a></p>{% endif %}</main></body></html>"""

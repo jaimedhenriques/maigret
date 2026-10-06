@@ -9,3 +9,7 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 .scope-list li{align-items:center}.pilot-note a{display:inline-flex;align-items:center;gap:6px}.pilot-note a .icon{width:12px;height:12px}
 .mobile-signout{display:none}h1[tabindex='-1']:focus{outline:none}@media(max-width:760px){.mobile-signout{display:inline-flex;padding:5px;font-size:10px}.topbar-right{gap:5px}.demo-tag{max-width:160px;text-align:center}}
+
+/* Verisento wordmark fits the existing navigation and candidate header. */
+.brand{font-size:26px;gap:8px}
+@media(max-width:650px){.brand{font-size:23px}}

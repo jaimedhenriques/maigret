@@ -1,6 +1,6 @@
 # Enterprise architecture and readiness
 
-Vetra is currently a working local pilot: an HR interface and candidate portal,
+Verisento is currently a working local pilot: an HR interface and candidate portal,
 Flask application, SQLite storage, workspace-scoped records, consent, audit entries,
 manual evidence review, candidate corrections, and a Stripe Identity integration
 foundation. Enterprise production readiness has not been established. There is no
@@ -13,7 +13,7 @@ network supplied by this repository.
 flowchart LR
     HR[HR users with enterprise OIDC] --> Edge[HTTPS edge and rate limits]
     Candidate[Candidate consent portal] --> Edge
-    Edge --> API[Stateless Vetra API]
+    Edge --> API[Stateless Verisento API]
     API --> DB[(Managed PostgreSQL and row level security)]
     API --> Queue[Durable provider job queue]
     Queue --> Worker[Scoped provider workers]

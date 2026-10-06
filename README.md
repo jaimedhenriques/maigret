@@ -1,10 +1,10 @@
-# Vetra
+# Verisento
 
 **Candidate-controlled verification for hiring teams.**
 
-Vetra gives HR teams a clear workflow for candidate approval, scoped information collection, identity-provider checks, evidence review, corrections, and audit history. This is a paid-pilot foundation. The working brand needs domain and trademark clearance before commercial launch.
+Verisento gives HR teams a clear workflow for candidate approval, scoped information collection, identity-provider checks, evidence review, corrections, and audit history. This is a paid-pilot foundation. The working brand needs domain and trademark clearance before commercial launch.
 
-![Vetra HR workspace with explicitly fictional demonstration candidates](docs/images/vetra-workspace.png)
+![Verisento HR workspace with explicitly fictional demonstration candidates](docs/images/vetra-workspace.png)
 
 ## Try the workspace
 
@@ -70,12 +70,12 @@ pip install pytest
 python -m pytest --noconftest tests/test_vetra*.py -q
 ```
 
-`--noconftest` keeps the standalone suite independent of Maigret's larger dependency stack. Tests cover tenancy, roles, approval, candidate-link scope, withdrawal, export and provider state handling. GitHub CI runs these checks on Vetra changes.
+`--noconftest` keeps the standalone suite independent of Maigret's larger dependency stack. Tests cover tenancy, roles, approval, candidate-link scope, withdrawal, export and provider state handling. GitHub CI runs these checks on Verisento changes.
 
 ## Attribution
 
 This repository began as a fork of [Maigret](https://github.com/soxoj/maigret), the MIT licensed OSINT engine. Its copyright and [LICENSE](LICENSE) are retained. The original README is in [docs/upstream/MAIGRET-README.md](docs/upstream/MAIGRET-README.md). The `maigret` Python package and CLI remain compatible; the new `vetra` app runs separately and does not expose username discovery or AI profiling to HR users.
 
-Public account matches do not establish identity, ownership, criminal history, employment eligibility or suitability. They are not verification evidence in Vetra.
+Public account matches do not establish identity, ownership, criminal history, employment eligibility or suitability. They are not verification evidence in Verisento.
 
 Manrope is self-hosted under its [SIL Open Font License](vetra/static/fonts/OFL.txt). Reused modules retain their licenses and exact source provenance; see the component review.

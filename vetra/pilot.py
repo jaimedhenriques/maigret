@@ -85,7 +85,7 @@ def forgot_password():
                 db.execute('DELETE FROM password_resets WHERE user_id=?',(row['id'],))
                 db.execute('INSERT INTO password_resets VALUES (?,?,?,NULL)',(hashlib.sha256(token.encode()).hexdigest(),row['id'],(datetime.now(timezone.utc)+timedelta(minutes=30)).isoformat(timespec='seconds')))
         if row and email_ready() and not current_app.config['DEMO']:
-            send_email(email,'Reset your Vetra password',current_app.config['PUBLIC_URL'].rstrip('/')+'/reset-password/'+token+'\n\nThis single-use link expires in 30 minutes. Ignore it if you did not request a reset.')
+            send_email(email,'Reset your Verisento password',current_app.config['PUBLIC_URL'].rstrip('/')+'/reset-password/'+token+'\n\nThis single-use link expires in 30 minutes. Ignore it if you did not request a reset.')
         message = 'If an account exists and email delivery is enabled, a reset link will be sent. If it does not arrive, contact your workspace owner.'
     return render_template('account.html',title='Reset your password',kind='request',message=message,csrf_token=session['csrf'])
 

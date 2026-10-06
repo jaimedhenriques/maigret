@@ -1,6 +1,6 @@
 # Provider integrations
 
-Vetra is a consent-based HR workflow with a Stripe Identity adapter. It does not
+Verisento is a consent-based HR workflow with a Stripe Identity adapter. It does not
 currently supply criminal records, education verification, employment verification,
 sanctions screening, credit reports, or government right-to-work attestations.
 Those capabilities remain **not connected**. Maigret username searches are not
@@ -11,7 +11,7 @@ identity verification or a substitute for a legally obtained background report.
 The adapter in `vetra/providers.py` uses the Python standard library and Stripe's
 hosted document flow. It creates a document verification session with a matching
 selfie requirement, tenant/candidate/check metadata, and an idempotency key.
-Documents and selfies are collected by Stripe, not uploaded into Vetra. The HR
+Documents and selfies are collected by Stripe, not uploaded into Verisento. The HR
 application stores the session identifier, short-lived hosted link, and result state.
 
 Configure these secrets outside version control:
